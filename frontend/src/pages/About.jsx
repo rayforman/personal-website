@@ -20,7 +20,7 @@ const About = () => {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-4">More About Me 🙋‍♂️</h1>
         <p className="mb-4">
-          Hello! I'm René Sultan, a senior Computer Science student at Columbia Engineering with a passion for AI/ML and innovation.
+          Hello! I'm Ray Forman, a senior Computer Science student at Columbia Engineering with a passion for AI/ML and innovation.
         </p>
         <p className="mb-4">
           My journey in tech has led me to exciting opportunities. I'm constantly seeking new challenges and innovative ways to apply my skills to solve real-world problems.

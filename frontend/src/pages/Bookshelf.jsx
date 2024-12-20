@@ -54,7 +54,7 @@ const Bookshelf = () => {
     },
     {
       title: "Meditations",
-      author: "René Descartes",
+      author: "Ray Descartes",
       description: "Philosophical meditations on the nature of existence and reality.",
       link: "https://www.amazon.com/Descartes-Meditations-Philosophy-Selections-Objections/dp/0521558182",
       image: "/meditations.png", // Updated image path
@@ -62,7 +62,7 @@ const Bookshelf = () => {
     },
     {
       title: "The Spatial Web",
-      author: "Gabriel René & Dan Mapes",
+      author: "Gabriel Ray & Dan Mapes",
       description: "A visionary book on the future of the internet and digital spaces.",
       link: "https://www.amazon.com/Spatial-Web-connect-machines-transform/dp/0578562960",
       image: "/spatial-web.png", // Updated image path
@@ -78,7 +78,7 @@ const Bookshelf = () => {
     },
     {
       title: "Neurosys",
-      author: "Dr. Michel F. Sultan",
+      author: "Dr. Michel F. Forman",
       description: "A gripping thriller that dives into the depths of cyber warfare, global conspiracies, and a super-intelligent synthetic brain under attack.",
       link: "https://a.co/d/fIt7eOS",
       image: "/neurosys.jpg",

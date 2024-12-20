@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <div className="min-h-screen bg-gray-900 text-white flex flex-col">
       <header className="bg-gray-800 py-4">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold">René Sultan</Link>
+          <Link to="/" className="text-xl font-bold">Ray Forman</Link>
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
               <li><Link to="/about" className="hover:text-blue-400 transition-colors">About</Link></li>
@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
 
       <footer className="bg-gray-800 py-4">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; {new Date().getFullYear()} René Sultan. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ray Forman. All rights reserved.</p>
         </div>
       </footer>
       <ScrollToTop />
