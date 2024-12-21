@@ -3,16 +3,14 @@ import { motion } from 'framer-motion';
 
 const PersonalityTraits = () => {
   const traits = [
-    { emoji: '🧠', text: 'Inquisitive Learner' },
+    { emoji: '🧠', text: 'Lifelong Learner' },
+    { emoji: '🌱', text: 'Growth Mindset' },
     { emoji: '💡', text: 'Innovation Enthusiast' },
     { emoji: '🏗️', text: 'Resilient Builder' },
-    { emoji: '🌱', text: 'Growth Mindset' },
-    { emoji: '🤝', text: 'Honest Collaborator' },
+    { emoji: '🤝', text: 'Avid Collaborator' },
     { emoji: '🤜🤛', text: 'Team Player' },
-    { emoji: '💬', text: 'Empathetic Listener' },
-    { emoji: '🌍', text: 'Trilingual Traveler' },
-    { emoji: '👥', text: 'People Connector' },
-    { emoji: '🙏', text: 'Grateful Individual' },
+    { emoji: '🗺️', text: 'World Traveler' },
+    { emoji: '🙏', text: 'Proudly Multicultural' },
   ];
 
   const container = {

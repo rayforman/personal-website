@@ -8,7 +8,6 @@ const Footer = () => {
         <div className="mt-2 flex justify-center space-x-4">
           <a href="https://github.com/rayforman" target="_blank" rel="noopener noreferrer" className="hover:text-white">GitHub</a>
           <a href="https://linkedin.com/in/rayforman" target="_blank" rel="noopener noreferrer" className="hover:text-white">LinkedIn</a>
-          <a href="https://twitter.com/rene_sultan" target="_blank" rel="noopener noreferrer" className="hover:text-white">Twitter</a>
         </div>
       </div>
     </footer>

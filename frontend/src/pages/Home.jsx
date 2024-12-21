@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import AnimatedPage from '../components/AnimatedPage';
 import ProfilePhoto from '../components/ProfilePhoto';
 import Introduction from '../components/Introduction';
@@ -33,13 +33,10 @@ const Home = () => {
           <ProfilePhoto />
           <Introduction />
           <div className="mt-6">
-            <h2 className="text-2xl font-semibold mb-4">📫 Get in Touch</h2>
             <div className="flex flex-wrap justify-center gap-4">
               <SocialButton Icon={Github} href="https://github.com/rayforman" label="GitHub" />
-              <SocialButton Icon={Twitter} href="https://twitter.com/rene_sultan" label="Twitter" />
               <SocialButton Icon={Linkedin} href="https://linkedin.com/in/rayforman" label="LinkedIn" />
-              <SocialButton Icon={Instagram} href="https://instagram.com/rene.sultan" label="Instagram" />
-              <SocialButton Icon={Mail} href="mailto:rs4240@columbia.edu" label="Email" />
+              <SocialButton Icon={Mail} href="mailto:raymond.forman@columbia.edu" label="Email" />
             </div>
           </div>
         </motion.div>
@@ -52,9 +49,9 @@ const Home = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div>
-              <h2 className="text-2xl font-semibold mb-4">🚀 What I'm Up To</h2>
+              <h2 className="text-2xl font-semibold mb-4">🧑‍💻 About Me</h2>
               <p className="text-gray-300">
-                I am taking advanced machine learning PhD seminars at Columbia to develop a deeper intuition about building robust and scalable Machine Learning solutions. To further develop this intuition, I am seeking a New Grad role in Machine Learning Engineering at a cutting-edge company at the forefront of AI and ML R&D. I am looking for a community of passionate, self-starting, innovative, collaborative, growth-oriented, and fun-loving individuals to pioneer the next generation of ML solutions together.
+                I am currently a Senior Computer Science Student at Columbia with a focus on Machine Learning and a minor in Business Management. I also work part time as a Software Engineer with a passion for building innovative and user-focused software solutions. A graduating senior, I am now actively seeking NYC-based full-time opportunities to work on impactful projects that leverage my skills in software engineering, business, and artificial intelligence to solve challenging problems. I am specifically interested in FinTech and collaborating with like-minded individuals to build innovative solutions that push the boundaries of what is possible with technology. Feel free to reach out to me if you have any interesting projects or opportunities you would like to discuss!
               </p>
             </div>
 
@@ -71,18 +68,22 @@ const Home = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div>
-              <h2 className="text-2xl font-semibold mb-4">🤖 My current perspective on AI and ML</h2>
+              <h2 className="text-2xl font-semibold mb-4">🚀 What I'm Up To</h2>
               <p className="text-gray-300 mb-4">
-                Currently, I am exploring different avenues in Machine Learning Solutions Design to develop an intuition on how to design effective, efficient, and scalable solutions for a wide range of real-world problems by understanding the underpinnings, strengths, and weaknesses of various machine learning architectures and systems. I deeply believe that as machine learning practitioners, we are experiencing a paradigm shift in how we build ML solutions across industries. This shift is driven primarily by the recent commercialization and open licensing of incredibly powerful models (such as LLMs), leveraging their massive pre-training, seamless integration, and scaling capabilities to build robust and scalable ML solutions faster than ever before.
+                Lately, I have been excited by the possibilities of pairing popular software APIs with LLMs to create innovative features. Here are a few: <br />
+                1) I built a Spotify AI Playlist Generator that uses a GPT-3 language model to generate playlists based on user input. Currently expanding to detect specific artists and songs. <br />
+                2) I am working on an Cryptocurrency Algorithmic Trader for highly volatile cryptos using a combination of technical analysis and online sentiment analysis to predict price movements and execute trades.
+                <br /><br />
+                <i>Additionally, I've been recruiting for NYC full-time opportunities to begin my career in building technology solutions.</i>
               </p>
             </div>
             
             <div>
               <h2 className="text-2xl font-semibold mb-4">💭 Problems I am passionate about</h2>
               <ul className="list-none space-y-2">
-                <li>🧠 How to reach AGI by developing a better understanding of the human brain and psyche</li>
-                <li>💬 How to communicate with LLMs to unlock their full potential in any given task</li>
-                <li>🤖 How to build AI systems that allow humans to delegate suitable tasks, enabling them to focus on more creative and general intelligence-related problems</li>
+                <li>💸 How can we democratize financial access and intelligence through technology?</li>
+                <li>🌐 How can LLMs accelerate enterprise workflows and unlock new technological possibilities?</li>
+                <li>🌍 How can the exploding capabilities of AI be harnessed to address climate change?</li>
               </ul>
             </div>
           </motion.div>

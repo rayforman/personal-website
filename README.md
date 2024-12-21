@@ -1,6 +1,4 @@
-# Kyle's Personal Website
-
-This is the repository for Kyle's personal website, showcasing his portfolio, projects, and professional experience.
+# Ray's Personal Website
 
 ## Technologies Used
 
@@ -17,7 +15,7 @@ This is the repository for Kyle's personal website, showcasing his portfolio, pr
  
 - **Deployment:**
   - Frontend: Vercel
-  - Backend: Heroku
+  - Backend: Render
 
 - **Additional Libraries:**
   - React Router (for routing)
@@ -30,12 +28,3 @@ This is the repository for Kyle's personal website, showcasing his portfolio, pr
 - Dynamic project showcase
 - Interactive bookshelf
 - Contact form with email integration
-
-## Setup
-
-1. Clone the repository
-2. Install dependencies for both frontend and backend
-3. Set up environment variables
-4. Run the development servers
-
-For more detailed information, refer to the package.json files in the frontend and backend directories.

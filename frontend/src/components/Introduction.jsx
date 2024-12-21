@@ -8,7 +8,7 @@ const Introduction = () => {
         Senior Computer Science Student at Columbia Engineering
       </p>
       <p className="text-xl text-gray-300">
-        Previous Machine Learning Engineer Intern at Spotify
+        Full Stack Software Engineer
       </p>
     </div>
   );
