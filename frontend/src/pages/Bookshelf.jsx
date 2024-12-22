@@ -84,6 +84,38 @@ const Bookshelf = () => {
       image: "/atomic-habits.png",
       tags: ["Personal Development", "Daily Improvement", "Lifestyle Design"]
     },
+    {
+      title: "The Socrates Express",
+      author: "Eric Weiner",
+      description: "A highlight reel of philosophical wisdom from around the world, as told through the lens of a train journey.",
+      link: "https://www.amazon.com/Socrates-Express-Search-Lessons-Philosophers/dp/1501129015?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.XOp2qa3qRG_76zTluUKk93dVE_9qYXiZi8w8ni_SjuTwGbHeUAdaPBrFP0lwh49om74tgkZRax0LUffi4jNHeUN36v8eOOSoH7xNIO3heRaPnKHHbV7aJnlg705LF0ccZYLv9by_kg3X4pTpf2gwMKe12BciI7I7OFRl4LCJ29rHcJ8Ah1j1MvQ_doVJPkNPdwxMXzA_yHsEe2rWdaCiFblH9lAVnILu-BON0MuGTJI.kjof6aKHRKthuMtuIDmmimAJAUGrHYjHTDTzyUcfwC8&qid=1734866018&sr=8-1",
+      image: "/socrates-express.png",
+      tags: ["Philosophy", "Travel", "Self-Discovery"]
+    },
+    {
+      title: "A Brief History of Time",
+      author: "Stephen Hawking",
+      description: "The history of the universe, from the big bang to black holes.",
+      link: "https://www.amazon.com/Brief-History-Time-Stephen-Hawking/dp/0553380168",
+      image: "/brief-history.png",
+      tags: ["Physics", "Astrophysics", "Big History", "Philosophy"]
+    },
+    {
+      title: "The Little Book of String Theory",
+      author: "Steven S. Gubser",
+      description: "A concise introduction to string theory, one of the most exciting areas of theoretical physics.",
+      link: "https://www.amazon.com/Little-String-Theory-Science-Essentials/dp/0691142890?crid=17IL2X9Q33JQI&dib=eyJ2IjoiMSJ9.6RCP--DmGqGDlyN8-vnbRE_UQupMYgvFChD8ZLTzbaGgnKh3Za71pzg96Aid68E9caFtpeECzT2Otxyb8bGnXJqdsN5FQ7Zi9mHT0O95lBW8ezAlSNw17vW-_0Iavo-rXDczJ3jbjgjgvoXzR12W981AfaDJNbBv91R4Ks7gu4vptnLm6OOHErm4WeYVMLgH0dPptwUgIMIsI7D3egkbR0ra4hOQA2cg7cxbx3H8rus.Gm_ApK2ZMO_oX88SVb5gLABqNOBFaZQPsDAominIkiY&dib_tag=se&keywords=the+little+book+of+string+theory&qid=1734866469&s=books&sprefix=the+little+book+of+string+theory%2Cstripbooks%2C98&sr=1-1",
+      image: "/string-theory.png",
+      tags: ["Physics", "Theoretical Physics", "Mathematics"]
+    },
+    {
+      title: "The Grand Design",
+      author: "Stephen Hawking",
+      description: "A look at the architecture of the universe, the role of the laws of physics, and the future of cosmology.",
+      link: "https://www.amazon.com/Grand-Design-Stephen-Hawking/dp/055338466X?crid=YEYN7U2SN8MP&dib=eyJ2IjoiMSJ9.EcY9TH7jC_Z7JHBzqGyHk6uswMLvkyQnao_j9YT40IyB1komEKbWYa2ds2wfqtyU_-fxOcFlKh1O9TbbDgErQ4dCbAvUvBtvRcgu0Nr4RF52kYbkjbPszblnuR6hOoGR0uDYR9wWwQE1ZtdwmXvFdlZkxWOoGH9RlM0QFn9yNnHL8Wch4G5EcqkwutNwIBwJ8TSkfVa33UPvZTT174HtH9xUsNc_P6gx1yVtVFhk2b8.CT-fFoOGAUmkOZOSrfNCe-vwVXGa78IT8HSFKm21UgM&dib_tag=se&keywords=the+grand+design&qid=1734866658&s=books&sprefix=the+grand+design%2Cstripbooks%2C113&sr=1-1",
+      image: "/grand-design.png",
+      tags: ["Physics", "Astrophysics", "Big History", "Philosophy"]
+    },
 
     // Add more books as needed
   ];
