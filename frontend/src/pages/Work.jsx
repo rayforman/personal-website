@@ -137,7 +137,7 @@ const Work = () => {
   return (
     <AnimatedPage>
       <div className="container mx-auto px-4">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">My Career Journey</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">My Journey</h1>
         <div className="relative pl-1 sm:pl-3">
           <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gray-600"/>
           {workExperiences.map((work, index) => (
