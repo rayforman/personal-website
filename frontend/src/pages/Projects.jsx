@@ -38,32 +38,68 @@ const ProjectCard = ({ title, description, technologies, image, link }) => (
 const Projects = () => {
   const projects = [
     {
-      title: "HTTP Client-Server Model and Dynamic Web Services",
-      description: "Developed a comprehensive system implementing an HTTP client-server model, a multi-process dynamic web server, and an interactive web application using WebSocket API. This project showcases advanced programming in C, including network programming, data structures, and real-time communication. (Gist link available to recruiters upon request, also included in my resume)",
-      technologies: ["C", "Socket Programming", "HTTP Protocol", "WebSocket API", "Multi-process Programming", "Data Structures", "File I/O"],
-      image: "/http-project.png",
-      link: null
+      title: "Spotify AI Playlist Generator",
+      description: "Built a web app using React/Node.js and the OpenAI API to generate Spotify playlists from natural language using GPT-3.5. Designed a Python microservice mapping text to Spotify's 11 audio features, integrating OAuth, REST APIs, and database functionality across three services. Now allows users to intelligently generate playlists for any mood, activity, or genre, leveraging the power of AI to enhance music discovery and curation. My go-to party trick for on-the-spot playlist generation!",
+      technologies: [
+        "Spotify API",
+        "OpenAI API",
+        "React",
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "JavaScript/JSX",
+        "Tailwind CSS",
+        "Fetch API",
+        "Flask",
+        "CORS",
+        "OAuth"
+        ],
+      image: "/spotify_project_full.png",
+      link: 'https://github.com/rayforman/spotify-playlist-generator'
     },
     {
-      title: "Advanced 2048 Game Solver: A Comprehensive AI Challenge",
-      description: "Developed an advanced AI solver for the 2048 game using the expectiminimax algorithm, alpha-beta pruning, and sophisticated heuristics. This project explores the depth of automated game-playing strategies, focusing on optimizing moves, managing randomness, and maximizing scores, consistently achieving high performance. (Gist link available to recruiters upon request, also included in my resume)",
+      title: "Cryptocurrency Algorithmic Trading Bot",
+      description: "Developing an algorithmic trading program leveraging the Robinhood API to automate cryptocurrency trading, utilizing key financial and qualitative indicators to optimize personal financial management. Created a high-frequency sentiment analysis system integrating Reddit and X APIs with OpenAI's GPT-3.5 to monitor and update crypto-related sentiment in real time, enabling data-driven trading decisions.",
+      technologies: [
+        "Robinhood API",
+        "OpenAI API",
+        "Reddit API",
+        "X API",
+        "Technical Analysis",
+        "Sentiment Analysis",
+        "YAML",
+        "TextBlob NLP",
+        "React",
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "Flask",
+        "CORS",
+        "OAuth",
+        ],
+      image: "/robinhood.png",
+      link: 'https://github.com/rayforman/crypto-sentiments'
+    },
+    {
+      title: "2048 Game Solver: A Comprehensive AI Challenge",
+      description: "Created an intelligent game-playing system for 2048 that combines expectiminimax search with strategic pruning techniques to make optimal decisions. The solver employs carefully crafted evaluation metrics to assess board states and anticipate random tile placements, consistently achieving high scores through strategic move planning. This project showcases the implementation of advanced game theory concepts and decision-making algorithms in an environment that balances deterministic strategy with probability management.",
       technologies: ["Python 3", "Expectiminimax Algorithm", "Alpha-beta Pruning", "Heuristic Functions", "AI Game Solving", "Modular AI Framework"],
-      image: "/2048-logo.png",
+      image: "/2048.png",
       link: null
     },
     {
-      title: "Rock-Paper-Scissors-Lizard-Spock Shape Interaction Simulator",
-      description: "A Java-based simulation that showcases the interaction of Rock, Paper, Scissors, Lizard, and Spock using an object-oriented approach. The project employs various design patterns, including Factory, Singleton, Observer, Strategy, Command, and Visitor, to create a clean, scalable, and maintainable system with a dynamic GUI.",
-      technologies: ["Java", "Swing", "AWT", "Factory Pattern", "Singleton Pattern", "Observer Pattern", "Strategy Pattern", "Command Pattern", "Visitor Pattern"],
-      image: "/rpskl-logo.png",
-      link: "https://gist.github.com/rayforman/4f5e835fc6557878579ffd0a32ac54c6"
+        title: "HTTP Client-Server Model and Dynamic Web Services",
+        description: "Created a full-stack web application featuring a robust backend server that communicates with clients via HTTP protocols and manages multiple processes for handling requests. The system includes a dynamic frontend interface using WebSocket technology for real-time updates. This project demonstrates expertise in low-level C programming, particularly in areas of network protocols, efficient data structure implementation, and concurrent process management.",
+        technologies: ["C", "Socket Programming", "HTTP Protocol", "WebSocket API", "Multi-process Programming", "Data Structures", "File I/O"],
+        image: "/http-project.png",
+        link: null
     },
     {
       title: "Trigram Language Model Implementation",
-      description: "An NLP project that implements a Trigram Language Model to predict word occurrence based on its preceding words in a sentence. It covers corpus processing, n-gram generation, probability calculation, and perplexity computation, demonstrating the model's application in tasks like text generation and essay scoring.",
+      description: "Built a natural language processing system centered on a trigram model that analyzes patterns of three consecutive words to forecast the next word in a sequence. The project encompasses text preprocessing, creation of three-word sequence patterns, statistical likelihood calculations, and evaluation of model accuracy through perplexity measurements. The system's practical applications include automated content generation and assessment of writing quality.",
       technologies: ["Python 3", "NLP", "Trigram Model", "N-gram Generation", "Perplexity Calculation", "Corpus Processing"],
       image: "/trigram-logo.png",
-      link: "https://gist.github.com/rayforman/9f875c0f8834e4c151ffa4e2f66db2b1"
+      link: null
     },
     // Add more projects here as we go
   ];

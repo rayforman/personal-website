@@ -126,7 +126,7 @@ const Work = () => {
       company: "Harvey Cedars Shellfish Co.",
       startDate: "June 2020",
       endDate: "August 2020",
-      description: "Where it all began. Worked in a fast-paced kitchen as a steamer and griller, preparing 500+ dinners a night. Learned the thrive in extremely high-pressure environments and developed strong teamwork skills. Left every night dripping in sweat and fish oil. I loved it.",
+      description: "Where it all began. During COVID summer, worked in a fast-paced kitchen as a steamer and griller, preparing 500+ dinners a night. Learned the thrive in extremely high-pressure environments and developed strong teamwork skills. Left every night dripping in sweat and fish oil. I loved it.",
       technologies: ["Cooking", "Steaming", "Grilling", "Team Collaboration", "Time Management", "High-Pressure Environments", "Resilience"],
       image: "/shellfish.png",
       link: null,
