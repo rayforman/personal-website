@@ -3,14 +3,14 @@ import React from 'react';
 const TechInterests = () => {
   const interests = [
     { topic: "Machine Learning", techs: "PyTorch, TensorFlow, Keras, Scikit-Learn, Jupyter" },
-    { topic: "Computer Vision", techs: "OpenCV, Albumentations, Segmentation Models" },
+    { topic: "Computer Vision", techs: "OpenCV, Segmentation Models" },
     { topic: "NLP", techs: "NLTK, Hugging Face Transformers" },
     { topic: "Cloud", techs: "AWS, GCS" },
     { topic: "Web Development", techs: "React.js, Node.js, JavaScript, Tailwind CSS" },
-    { topic: "Databases", techs: "MySQL, MongoDB" },
-    { topic: "Data Science", techs: "Pandas, NumPy, Matplotlib, Seaborn" },
-    { topic: "DevOps", techs: "Git, Bash, Docker, Kubernetes, CI/CD" },
-    { topic: "Languages", techs: "Python, Java, C/C++, MIPS Assembly" },
+    { topic: "Databases", techs: "BigQuery SQL, MongoDB" },
+    { topic: "Data Science", techs: "Pandas, NumPy, Matplotlib" },
+    { topic: "DevOps", techs: "Git, Bash, Docker, Kubernetes" },
+    { topic: "Languages", techs: "Python, Java, Javascript, C/C++, C#, SQL, R, MIPS Assembly" },
   ];
 
   return (

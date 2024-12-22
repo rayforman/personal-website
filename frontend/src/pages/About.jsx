@@ -4,29 +4,24 @@ import TechInterests from '../components/TechInterests';
 
 const About = () => {
   const advancedClasses = [
-    { name: "Unsupervised Learning", professor: "Prof. Nakul Verma" },
-    { name: "Deep Learning for Computer Vision", professor: "Prof. Peter Belhumeur" },
-    { name: "Computation and the Brain", professor: "Prof. Christos Papadimitriou" },
-    { name: "Machine Learning", professor: "Prof. Nakul Verma" },
-    { name: "Advanced Spoken Language Processing", professor: "Prof. Julia Hirschberg" },
+    { name: "Applied Computer Vision", professor: "Prof. Austin Reiter" },
+    { name: "Deep Learning for Computer Graphics", professor: "Prof. Corey Toler-Franklin" },
     { name: "Natural Language Processing", professor: "Prof. Daniel Bauer" },
     { name: "Artificial Intelligence", professor: "Prof. Ansaf Salleb-Aouissi" },
-    { name: "Design Using C++", professor: "Prof. Bjarne Stroustrup" },
-    { name: "Clean Object-Oriented Design", professor: "Prof. John R. Kender" },
+    { name: "3D User Interfaces & Augmented Reality", professor: "Prof. Steven K. Feiner" },
+    { name: "Computer Graphics", professor: "Prof. Hadi Fadaifard" },
+    { name: "Computer Animation", professor: "Prof. Changxi Zheng" }
   ];
 
   return (
     <AnimatedPage>
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4">More About Me 🙋‍♂️</h1>
+        <h1 className="text-3xl font-bold mb-4">Bio ✍️</h1>
         <p className="mb-4">
-          Hello! I'm Ray Forman, a senior Computer Science student at Columbia Engineering with a passion for AI/ML and innovation.
+          Hi there! I'm Ray Forman, a senior Computer Science student at Columbia with a passion for entrepreneurship, technology, and innovation.
         </p>
         <p className="mb-4">
-          My journey in tech has led me to exciting opportunities. I'm constantly seeking new challenges and innovative ways to apply my skills to solve real-world problems.
-        </p>
-        <p className="mb-4">
-          When I'm not coding or learning about the latest tech trends, you can find me writing philosophical reflections, reading all sorts of books, playing the piano, engaging in different sports, trying out new restaurants and coffee shops in NYC, or clubbing.
+          I'm originally from Northern Virginia but New York is my family home. When I'm not coding, you can find me learning new languages, practicing the guitar, or watching my New York Sports teams (Knicks, Mets, and Jets).
         </p>
 
         <h2 className="text-2xl font-bold mt-8 mb-4">Advanced Classes taken at Columbia 🎓</h2>
