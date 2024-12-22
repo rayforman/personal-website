@@ -19,7 +19,6 @@
 
 - **Additional Libraries:**
   - React Router (for routing)
-  - Nodemailer (for contact form functionality)
 
 ## Features
 
@@ -27,4 +26,3 @@
 - Animated page transitions
 - Dynamic project showcase
 - Interactive bookshelf
-- Contact form with email integration

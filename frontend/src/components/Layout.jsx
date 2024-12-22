@@ -17,8 +17,7 @@ const Layout = ({ children }) => {
               <li><Link to="/work" className="hover:text-blue-400 transition-colors">Work</Link></li>
               <li><Link to="/projects" className="hover:text-blue-400 transition-colors">Projects</Link></li>
               <li><Link to="/bookshelf" className="hover:text-blue-400 transition-colors">Bookshelf</Link></li>
-              <li><Link to="/blog" className="hover:text-blue-400 transition-colors">Blog</Link></li>
-              <li><Link to="/contact" className="hover:text-blue-400 transition-colors">Contact</Link></li>
+              <li><Link to="/Inspiration" className="hover:text-blue-400 transition-colors">Inspiration</Link></li>
             </ul>
           </nav>
           <button 
@@ -42,8 +41,7 @@ const Layout = ({ children }) => {
             <li><Link to="/work" className="block hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Work</Link></li>
             <li><Link to="/projects" className="block hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Projects</Link></li>
             <li><Link to="/bookshelf" className="block hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Bookshelf</Link></li>
-            <li><Link to="/blog" className="block hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
-            <li><Link to="/contact" className="block hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+            <li><Link to="/Inspiration" className="block hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Inspiration</Link></li>
           </ul>
         </motion.nav>
       )}

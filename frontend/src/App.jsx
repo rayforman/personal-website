@@ -7,8 +7,7 @@ import About from './pages/About';
 import Work from './pages/Work';
 import Projects from './pages/Projects';
 import Bookshelf from './pages/Bookshelf';
-import Blog from './pages/Blog';
-import Contact from './pages/Contact';
+import Inspiration from './pages/Inspiration';
 import NotFound from './pages/NotFound';
 
 function AnimatedRoutes() {
@@ -22,8 +21,7 @@ function AnimatedRoutes() {
         <Route path="/work" element={<Work />} /> 
         <Route path="/projects" element={<Projects />} />
         <Route path="/bookshelf" element={<Bookshelf />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/Inspiration" element={<Inspiration />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
