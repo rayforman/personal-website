@@ -32,9 +32,19 @@ const Inspiration = () => {
       videoId: "kYfNvmF0Bqw"
     },
     {
+      title: "3Blue1Brown: What 'Follow your dreams' misses",
+      excerpt: '"Action precedes motivation. Just start doing." - Grant Sanderson',
+      videoId: "W3I3kAg2J7w"
+    },
+    {
       title: "Earl Nightingale: The Strangest Secret",
       excerpt: '"Ask, and it shall be given you. Seek, and you shall find. Knock, and it shall be opened unto you." - Earl Nightingale',
       videoId: "ZN6m0-UVLro"
+    },
+    {
+      title: "Steve Jobs' Stanford graduation speech: Never Stop Dreaming",
+      excerpt: '"I had been rejected, but I was still in love. And so I decided to start over" - Steve Jobs',
+      videoId: "Tuw8hxrFBH8"
     },
     {
       title: "A Tribute to Animation",
@@ -42,15 +52,12 @@ const Inspiration = () => {
       videoId: "jzGwTHniLqk"
     },
     {
-      title: "Steve Jobs' Stanford graduation speech: Follow your dreams",
-      excerpt: '"I had been rejected, but I was still in love. And so I decided to start over" - Steve Jobs',
-      videoId: "Tuw8hxrFBH8"
-    },
-    {
       title: "Learning Languages Ruined My Life: It's Beautiful",
       excerpt: '"After learning a language, a part of you becomes a member of the tribe to which the language belongs to." - Phoenix Hou',
       videoId: "ZZ_4gzoDDAE"
     },
+
+    // add more videos here
   ];
 
   return (
