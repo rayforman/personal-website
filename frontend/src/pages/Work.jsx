@@ -7,7 +7,7 @@ const TimelineNode = ({ isActive }) => (
   <div className="absolute left-0 top-0 w-11 h-6 -translate-x-1/2 bg-gray-800 rounded-full border-4 border-gray-300 z-10" />
 );
 
-const WorkCard = ({ title, company, description, technologies, image, link, startDate, endDate, isLast }) => (
+const WorkCard = ({ title, company, description, technologies, image, link, startDate, endDate, isLast, location }) => (
   <motion.div 
     className="mb-16 relative pl-4 sm:pl-12"
     initial={{ opacity: 0, y: 50 }}
@@ -28,11 +28,12 @@ const WorkCard = ({ title, company, description, technologies, image, link, star
         <LazyImage 
           src={image} 
           alt={company} 
-          className="w-full h-full object-contain bg-gray-700"
+          className="w-full h-full object-contain bg-gray-100"
         />
       </div>
       <h3 className="text-lg sm:text-xl font-semibold mb-2">{title}</h3>
       <h4 className="text-base sm:text-lg text-gray-300 mb-2">{company}</h4>
+      {location && <p className="text-sm sm:text-base text-gray-400 mb-2">{location}</p>}
       <p className="text-sm sm:text-base text-gray-300 mb-4">{description}</p>
       <div className="mb-4 flex flex-wrap">
         {technologies.map((tech, index) => (
@@ -55,72 +56,88 @@ const WorkCard = ({ title, company, description, technologies, image, link, star
 const Work = () => {
   const workExperiences = [
   {
-      title: "AI Research Scientist",
-      company: "Columbia Engineering - Software Systems Lab",
-      startDate: "September 2024",
+      title: "Junior Software Engineer",
+      company: "LEAP NSF - Pierre Gentine Lab",
+      startDate: "August 2024",
       endDate: "Present",
-      description: "Leading research on LLM security and vulnerability assessment under Professor Chengzhi Mao and Professor Junfeng Yang. Developed novel techniques for analyzing LLM vulnerabilities to membership inference attacks and jailbreaking attempts. Currently formulating a statistical mathematical framework using Bayesian learning to model and predict the impact of fine-tuning on LLM next-token prediction. Created InsultGPT, successfully demonstrating vulnerabilities in ChatGPT-4 through advanced prompt engineering and fine-tuning techniques.",
-      technologies: ["LLM Security", "Bayesian Learning", "Prompt Engineering", "Fine-tuning", "GPT Models", "Statistical Modeling", "Python", "PyTorch"],
-      image: "/cscu_logo1-nobg.png",
-      link: null
+      description: "Cutting edge climate model innovation. Developing an automated LLM code translation pipeline to build the world’s first Python-based climate model. Product will revolutionize climate data accessibility and empower researchers with ML techniques and modern GPU computing power. Implemented a Retrieval Augmented Generation (RAG) module using Abstract Syntax Trees and example translations that improved Claude Sonnet 3.5 Fortran-to-Python translation times by 60% and reduced manual coding errors by 30%.",
+      technologies: ["LLMs", "Retrieval Augmented Generation", "Prompt Engineering", "Fine-tuning", "GPT Models", "Python", "PyTorch", "Fortran", "Git"],
+      image: "/leapnsf_full.png",
+      link: null,
+      location: "New York City, New York"
     },
     {
-      title: "Machine Learning Engineering Intern",
-      company: "Spotify - Content Understanding",
+      title: "Data Analytics Intern",
+      company: "Earnest Analytics",
       startDate: "June 2024",
       endDate: "August 2024",
-      description: "Developed end-to-end machine learning pipelines for content moderation, leveraging state-of-the-art multimodal ML techniques with OpenAI's CLIP model. Created data preprocessing workflows, fine-tuned models, and built evaluation dashboards, enhancing content quality and safety across the platform.",
-      technologies: ["Python", "PyTorch", "CLIP", "GCP", "BigQuery", "Jupyter", "Pandas", "NumPy", "Seaborn", "Matplotlib"],
-      image: "/spotify-logo2.png",
-      link: null
+      description: "Conducted in-depth analysis of proprietary consumer transaction data and corporate filings using advanced SQL queries, delivering actionable insights into financial health and performance ahead of quarterly earnings. Contributed a new key indicator to an earnings prediction algorithm leveraging consumer transaction data and machine learning techniques, improving predictive accuracy by 5% to better inform client decision-making. Collaborated across teams to deliver actionable insights to stakeholders at premier fintech and financial institutions.",
+      technologies: ["Machine Learning", "Predicive Analysis", "BigQuery", "SQL", "Tableau", "Data Visualization", "Financial Analysis", "FinTech", "Excel"],
+      image: "/earnest.png",
+      link: null,
+      location: "New York City, New York"
     },
     {
-      title: "Full-Stack Software Engineering Intern",
-      company: "HoneyHive - AI Developer Platform for LLM Applications",
-      startDate: "January 2024",
-      endDate: "May 2024",
-      description: "Contributed to the design and implementation of advanced, filterable dashboards for in-depth LLM performance analysis. Enabled users to benchmark models, compare hyperparameters, and select optimal LLM providers efficiently. Enhanced the platform's dataset management features to support multiple file types (JSON, JSONL, CSV), improving error handling and scalability for large datasets.",
-      technologies: ["React", "JavaScript", "Node.js", "LLM", "Data Visualization", "JSON", "CSV"],
-      image: "/honeyhive-logo.png",
-      link: null
+      title: "Partner Management Intern",
+      company: "Columbia Climate School - Development and Partnerships",
+      startDate: "September 2022",
+      endDate: "Present",
+      description: "Cultivating and managing partnerships between philanthropic climate research funders and Columbia researchers. Created the Columbia Climate School Partner Database using MongoDB. Analyzed 100+ climate research funders to identify potential partners for the Climate School. Developed a data-driven strategy to engage with partners and secure funding for the Climate School's research initiatives.",
+      technologies: ["MongoDB", "Excel", "Salesforce", "Project Management", "Business Development", "Climate Tech"],
+      image: "/climateschool_.png",
+      link: null,
+      location: "New York City, New York"
     },
     {
-      title: "AI/ML Visiting Research Scientist",
-      company: "Peking University - Center on Frontiers of Computing Studies",
-      startDate: "June 2023",
-      endDate: "July 2023",
-      description: "Conducted AI/ML research at the Center on Frontiers of Computing Studies. Shadowed leading researchers on projects integrating LLMs with RLHF for robot learning and multi-modal intelligence. Engaged in workshops and conferences on LLM applications, RLHF, and Federated Learning. Attended tech demos at major Chinese AI institutions including Huawei, Baidu, and ByteDance, gaining insights into cutting-edge AI applications.",
-      technologies: ["LLMs", "RLHF", "Robot Learning", "Multi-modal AI", "Federated Learning"],
-      image: "/pku-logo.png",
-      link: null
+      title: "Founding Engineer",
+      company: "Sustainable U - Climate Startup",
+      startDate: "March 2022",
+      endDate: "February 2023",
+      description: "Spearheaded the application design for a campus app using a Swift / Node.js tech stack, enabling discovery and attendance of 50+ sustainability events within the first three months post-launch. Conducted beta testing with 10+ student organizations, integrating feedback to improve engagement by 30%. Delivered an MVP within 6 months, achieving 85% retention through iterative product development.",
+      technologies: ["Swift", "Node.js", "Full-Stack Development", "Startup", "Product Management", "UI/UX Design", "Beta Testing"],
+      image: "/sustainableu_.png",
+      link: null,
+      location: "New York City, New York"
     },
     {
-      title: "Machine Learning Engineering Intern",
-      company: "Aren - AI-Powered Platform for Infrastructure Management",
+      title: "Chapter President",
+      company: "Columbia Beta Theta Pi",
       startDate: "June 2022",
       endDate: "September 2022",
-      description: "Engineered a deep learning pipeline for crack detection in infrastructure imagery using PyTorch. Facilitated comprehensive damage reports for clients across multiple structure types. Evaluated 25 semantic segmentation models, comparing IoU, accuracy, precision, recall, and F1 scores. Built and deployed a data preprocessing pipeline with augmentation using the Albumentations library.",
-      technologies: ["Python", "PyTorch", "Deep Learning", "Semantic Segmentation", "Albumentations", "Data Preprocessing"],
-      image: "/aren-logo.png",
-      link: null
+      description: "Chaired executive board responsible for planning, budgeting, and executing a year-long calendar of projects, and directed weekly chapter meetings of 60+ members. Managed a $50,000 semesterly operating budget, membership dues, and fundraising. Inaugurated enduring traditions: House Improvements Fund, Brotherhood Retreats, ticketed events at downtown venues, alumni receptions, and a spring philanthropy concert known as “Beta Jams.” Results: Increased membership by 42% to 67 active members and increased operating budget by 48%. Raised $10,000 through on-campus partnership events for the UN Sustainable Development Goals.",
+      technologies: ["Executive Leadership", "Project Management", "Team Management", "Public Speaking", "Financial Management", "Strategic Planning", "Conflict Resolution", "Risk Management", "Fundraising"],
+      image: "/betalogo_.png",
+      link: null,
+      location: "New York City, New York"
     },
     {
-      title: "Project Management Intern",
-      company: "Ostaz by Inspired - Leading Online Private Tutoring Platform in the MENA Region",
-      startDate: "June 2021",
-      endDate: "August 2021",
-      description: "Completed an explanatory analysis of the initiative's participation findings to improve the startup's business forecasting. Analyzed descriptive data from the EdTech startup's 50K+ client database to incorporate demand in college programs in MENA and optimize data collection through better team distribution of dashboard reports and centralization of key findings. Engaged in strategy meetings with the board to investigate potential office expansion in Dubai based on inferential analysis.",
-      technologies: ["Data Analysis", "Business Forecasting", "EdTech", "Strategy", "Project Management"],
-      image: "/ostaz-logo.png",
+      title: "Bartender",
+      company: "The Heights Bar & Grill",
+      startDate: "June 2022",
+      endDate: "December 2022",
+      description: "Managed a high-volume bar in NYC, serving 200+ customers per night during 12 hour shifts late into the night. Learned to multitask and prioritize under pressure, ensuring a positive customer experience. The most interesting people I've ever met to this day were across that bar.",
+      technologies: ["Bartending", "Customer Service", "Time Management", "Interpersonal Communication", "Relationship Building"],
+      image: "/heights.png",
       link: null,
-      location: "Beirut, Lebanon"
+      location: "New York City, New York"
+    },
+    {
+      title: "Line Cook",
+      company: "Harvey Cedars Shellfish Co.",
+      startDate: "June 2020",
+      endDate: "August 2020",
+      description: "Worked in a fast-paced kitchen as a steamer and griller, preparing 500+ dinners a night. Learned the thrive in extremely high-pressure environments and developed strong teamwork skills. Left every night dripping in sweat and fish oil. I loved it.",
+      technologies: ["Cooking", "Steaming", "Grilling", "Team Collaboration", "Time Management", "High-Pressure Environments", "Resilience"],
+      image: "/shellfish.png",
+      link: null,
+      location: "Long Beach Island, New Jersey"
     }
   ];
 
   return (
     <AnimatedPage>
       <div className="container mx-auto px-4">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">Career Progression</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">My Career Journey</h1>
         <div className="relative pl-1 sm:pl-3">
           <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gray-600"/>
           {workExperiences.map((work, index) => (
