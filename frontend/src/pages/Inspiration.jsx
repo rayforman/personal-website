@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 
 const YouTubeEmbed = ({ videoId, title }) => (
