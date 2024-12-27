@@ -122,7 +122,15 @@ const Bookshelf = () => {
       description: "A guide to style, health, and success from the legendary New York Knicks point guard.",
       link: "https://www.amazon.com/Rockin-Steady-Guide-Basketball-Cool/dp/1600788165?crid=162J5YL7O3M5E&dib=eyJ2IjoiMSJ9.BrwjPfJdefSyY36B8jmYJvYw0VJq50SNiv9wW2Nj3dlzi5B5nn8Smpepi9WQkHu9EGy8hR84aDghr4mXmyzs-A.wHWtZthfptZxnvYPRQOXdeO-A4oSowKcx5YWqJgHkoI&dib_tag=se&keywords=rockin+steady+walt+frazier&qid=1735262192&sprefix=rockin+steady%2Caps%2C141&sr=8-1",
       image: "/clyde.jpg",
-      tags: ["Basketball", "Lifestyle", "Success", "New York Knicks"]
+      tags: ["Basketball", "Lifestyle", "Swagger", "New York Knicks"]
+    },
+    {
+      title: "Make Your Bed",
+      author: "Admiral William H. McRaven",
+      description: "How Little Things That Can Change Your Life...And Maybe the World",
+      link: "https://www.amazon.com/Make-Your-Bed-Little-Things/dp/1455570249/?_encoding=UTF8&pd_rd_w=SoMdG&content-id=amzn1.sym.6171bcce-f2ed-41e0-a485-e2daff0738f0%3Aamzn1.symc.abfa8731-fff2-4177-9d31-bf48857c2263&pf_rd_p=6171bcce-f2ed-41e0-a485-e2daff0738f0&pf_rd_r=4QS2EPP6M0N4M23B5RS3&pd_rd_wg=uVPm0&pd_rd_r=31378c03-df2a-4827-9210-ea03ccdcd7dc&ref_=pd_hp_d_btf_ci_mcx_mr_ca_id_hp_d",
+      image: "/make-your-bed.jpg",
+      tags: ["Lifestyle", "Personal Development", "Daily Improvement", "Discipline"]
     },
 
     // Add more books as needed
