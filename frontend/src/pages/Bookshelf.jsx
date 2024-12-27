@@ -116,6 +116,14 @@ const Bookshelf = () => {
       image: "/grand-design.png",
       tags: ["Physics", "Astrophysics", "Big History", "Philosophy"]
     },
+    {
+      title: "Rockin' Steady",
+      author: "Walt 'Clyde' Frazier",
+      description: "A guide to style, health, and success from the legendary New York Knicks point guard.",
+      link: "https://www.amazon.com/Rockin-Steady-Guide-Basketball-Cool/dp/1600788165?crid=162J5YL7O3M5E&dib=eyJ2IjoiMSJ9.BrwjPfJdefSyY36B8jmYJvYw0VJq50SNiv9wW2Nj3dlzi5B5nn8Smpepi9WQkHu9EGy8hR84aDghr4mXmyzs-A.wHWtZthfptZxnvYPRQOXdeO-A4oSowKcx5YWqJgHkoI&dib_tag=se&keywords=rockin+steady+walt+frazier&qid=1735262192&sprefix=rockin+steady%2Caps%2C141&sr=8-1",
+      image: "/clyde.jpg",
+      tags: ["Basketball", "Lifestyle", "Success", "New York Knicks"]
+    },
 
     // Add more books as needed
   ];
