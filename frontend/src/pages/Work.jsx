@@ -63,7 +63,7 @@ const Work = () => {
       description: "My latest and most impactful work to date: building a cutting edge climate model innovation. Developing an automated LLM code translation pipeline to build the world’s first Python-based climate model. Product will revolutionize climate data accessibility and empower researchers with ML techniques and modern GPU computing power. Implemented a Retrieval Augmented Generation (RAG) module using Abstract Syntax Trees and example translations that improved Claude Sonnet 3.5 Fortran-to-Python translation times by 60% and reduced manual coding errors by 30%.",
       technologies: ["LLMs", "Retrieval Augmented Generation", "Prompt Engineering", "Fine-tuning", "GPT Models", "Python", "PyTorch", "Fortran", "Git"],
       image: "/leapnsf_full.png",
-      link: null,
+      link: 'https://leap.columbia.edu/',
       location: "New York City, New York"
     },
     {
@@ -74,7 +74,7 @@ const Work = () => {
       description: "My exciting junior summer internship in Flatiron, NYC. Conducted in-depth analysis of proprietary consumer transaction data and corporate filings using advanced SQL queries, delivering actionable insights into financial health and performance ahead of quarterly earnings. Contributed a new key indicator to an earnings prediction algorithm leveraging consumer transaction data and machine learning techniques, improving predictive accuracy by 5% to better inform client decision-making. Collaborated across teams to deliver actionable insights to stakeholders at premier fintech and financial institutions.",
       technologies: ["Machine Learning", "Predicive Analysis", "BigQuery", "SQL", "Tableau", "Data Visualization", "Financial Analysis", "FinTech", "Excel"],
       image: "/earnest.png",
-      link: null,
+      link: 'https://www.earnestanalytics.com/',
       location: "New York City, New York"
     },
     {
@@ -85,7 +85,7 @@ const Work = () => {
       description: "My longest ongoing part-time job during college. Cultivating and managing partnerships between philanthropic climate research funders and Columbia researchers. Created the Columbia Climate School Partner Database using MongoDB. Analyzed 100+ climate research funders to identify potential partners for the Climate School. Developed a data-driven strategy to engage with partners and secure funding for the Climate School's research initiatives.",
       technologies: ["MongoDB", "Excel", "Salesforce", "Project Management", "Business Development", "Climate Tech"],
       image: "/climateschool_.png",
-      link: null,
+      link: 'https://www.climate.columbia.edu/',
       location: "New York City, New York"
     },
     {
@@ -107,7 +107,7 @@ const Work = () => {
       description: "My proudest leadership achievement during college. Chaired a ten-person executive board responsible for planning, budgeting, and executing a year-long calendar of projects, and directed weekly chapter meetings of 60+ members. Managed a $50,000 semesterly operating budget, membership dues, and fundraising. Inaugurated enduring traditions: House Improvements Fund, Brotherhood Retreats, ticketed events at downtown venues, alumni receptions, and a spring philanthropy concert known as “Beta Jams.” Results: Increased membership by 42% to 67 active members and increased operating budget by 48%. Raised $10,000 through on-campus partnership events for the UN Sustainable Development Goals.",
       technologies: ["Executive Leadership", "Project Management", "Team Management", "Public Speaking", "Financial Management", "Strategic Planning", "Conflict Resolution", "Risk Management", "Fundraising"],
       image: "/betalogo_.png",
-      link: null,
+      link: 'https://www.cc-seas.columbia.edu/student-group/beta-theta-pi',
       location: "New York City, New York"
     },
     {
@@ -118,7 +118,7 @@ const Work = () => {
       description: "First job in New York City as a college student trying to get by. Managed a high-volume bar in Manhattan, serving 200+ customers per night during 12 hour shifts late into the night. Learned to multitask and prioritize under pressure, ensuring a positive customer experience. The most interesting people I've ever met to this day were across that bar.",
       technologies: ["Bartending", "Customer Service", "Time Management", "Interpersonal Communication", "Relationship Building"],
       image: "/heights.png",
-      link: null,
+      link: 'https://www.theheightsnyc.com/',
       location: "New York City, New York"
     },
     {
@@ -129,7 +129,7 @@ const Work = () => {
       description: "Where it all began. During COVID summer, worked in a fast-paced kitchen as a steamer and griller, preparing 500+ dinners a night. Learned the thrive in extremely high-pressure environments and developed strong teamwork skills. Left every night dripping in sweat and fish oil. I loved it.",
       technologies: ["Cooking", "Steaming", "Grilling", "Team Collaboration", "Time Management", "High-Pressure Environments", "Resilience"],
       image: "/shellfish.png",
-      link: null,
+      link: 'https://www.harveycedarsshellfishco.com/',
       location: "Long Beach Island, New Jersey"
     },
     {
@@ -151,7 +151,7 @@ const Work = () => {
       description: "My first leadership role in high school. Organized weekly meetings, guest speakers, and field trips to DC-based Physics Expositions. Garnered interest in physics by discussing astrophysics, quantum mechanics, and modern theory not typically covered in high school classrooms. Created and managed a discord server with 100+ members for communication and community building around shared interest. Led a team of 20 students to compete in the Physics Olympiad, achieving a 90% pass rate.",
       technologies: ["Leadership", "Teaching", "Inspiration", "Public Speaking", "Management"],
       image: "/physics-club.png",
-      link: null,
+      link: 'https://ohsphysicsclub.weebly.com/',
       location: "Vienna, Virginia"
     }
   ];
