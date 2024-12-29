@@ -137,7 +137,7 @@ const Work = () => {
       company: "Oakton Rowing",
       startDate: "September 2020",
       endDate: "June 2021",
-      description: "My high school athletic career. Led a 40-person team to the Virginia State Championships, winning the program's first Gold Medal in the Men's 4+ category. Coordinated daily practices, managed team logistics, and fostered a culture of excellence.",
+      description: "My four-year high school athletic career. Led a 40-person team to the Virginia State Championships, winning the program's first ever Gold Medal in the Men's 4+ category. Coordinated daily practices, managed team logistics, and fostered a culture of excellence during the challenging COVID-19 era. Hosted informal \"Captain's Practices\" in the off-season to maintain fitness and organized \"Erg-a-Thon\" fundraisers raising $10,000 for new equipment and team travel.",
       technologies: ["Leadership", "Athletics", "Inspiration", "Public Speaking", "Team Management", "Resilience"],
       image: "/oakton-crew.png",
       link: 'https://www.oaktoncrew.com/',
