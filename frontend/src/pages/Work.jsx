@@ -131,7 +131,29 @@ const Work = () => {
       image: "/shellfish.png",
       link: null,
       location: "Long Beach Island, New Jersey"
-    }
+    },
+    {
+      title: "Varsity Captain",
+      company: "Oakton Rowing",
+      startDate: "September 2020",
+      endDate: "June 2021",
+      description: "My high school athletic career. Led a 40-person team to the Virginia State Championships, winning the program's first Gold Medal in the Men's 4+ category. Coordinated daily practices, managed team logistics, and fostered a culture of excellence.",
+      technologies: ["Leadership", "Athletics", "Teamwork", "Resilience"],
+      image: "/oakton-crew.png",
+      link: null,
+      location: "Occoquan, Virginia"
+    },
+    // {
+    //   title: "Line Cook",
+    //   company: "Harvey Cedars Shellfish Co.",
+    //   startDate: "June 2020",
+    //   endDate: "August 2020",
+    //   description: "Where it all began. During COVID summer, worked in a fast-paced kitchen as a steamer and griller, preparing 500+ dinners a night. Learned the thrive in extremely high-pressure environments and developed strong teamwork skills. Left every night dripping in sweat and fish oil. I loved it.",
+    //   technologies: ["Cooking", "Steaming", "Grilling", "Team Collaboration", "Time Management", "High-Pressure Environments", "Resilience"],
+    //   image: "/shellfish.png",
+    //   link: null,
+    //   location: "Long Beach Island, New Jersey"
+    // }
   ];
 
   return (
