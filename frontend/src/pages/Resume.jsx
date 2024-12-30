@@ -5,7 +5,7 @@ const ResumePDF = () => {
   return (
     <div className="w-full h-screen bg-bg-dark p-4">
       <iframe
-        src="/RF_Resume.pdf#view=FitH"
+        src="/RayForman_Resume.pdf#view=FitH"
         className="w-full h-full rounded-lg"
         title="Resume"
       />
@@ -21,7 +21,7 @@ export default ResumePDF;
 //   return (
 //     <div className="w-full min-h-screen bg-bg-dark p-4 flex justify-center items-center">
 //       <img
-//         src="/RF_Resume.png"
+//         src="/RayForman_Resume.png"
 //         alt="Resume"
 //         className="max-w-full max-h-[90vh] object-contain rounded-lg"
 //       />
