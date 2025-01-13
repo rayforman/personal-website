@@ -26,34 +26,9 @@ const AnimationPost = ({ title, excerpt, videoId }) => (
 const Animation = () => {
   const posts = [
     {
-      title: "Steve Jobs on the secret to changing the world",
-      excerpt: '"Everything around you that you call life was made up by people that were no smarter than you." - Steve Jobs',
-      videoId: "kYfNvmF0Bqw"
-    },
-    {
-      title: "3Blue1Brown: What 'Follow your dreams' misses",
-      excerpt: '"Action precedes motivation. Just start doing." - Grant Sanderson',
-      videoId: "W3I3kAg2J7w"
-    },
-    {
-      title: "Earl Nightingale: The Strangest Secret",
-      excerpt: '"Ask, and it shall be given you. Seek, and you shall find. Knock, and it shall be opened unto you." - Earl Nightingale',
-      videoId: "ZN6m0-UVLro"
-    },
-    {
-      title: "Steve Jobs' Stanford graduation speech: Never Stop Dreaming",
-      excerpt: '"I had been rejected, but I was still in love. And so I decided to start over" - Steve Jobs',
-      videoId: "Tuw8hxrFBH8"
-    },
-    {
       title: "A Tribute to Animation",
       excerpt: '"Animation is not a genre. A superhero movie is not a genre. They are movies! They can be musicals, they can be dramas, they can be comedies, they can be adventures." - Brad Bird',
       videoId: "jzGwTHniLqk"
-    },
-    {
-      title: "Learning Languages Ruined My Life: It's Beautiful",
-      excerpt: '"After learning a language, a part of you becomes a member of the tribe to which the language belongs to." - Phoenix Hou',
-      videoId: "ZZ_4gzoDDAE"
     },
 
     // add more videos here
@@ -62,7 +37,15 @@ const Animation = () => {
   return (
     <AnimatedPage>
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-8">Animation Corner</h1>
+        <div className="mb-12">
+          <h1 className="text-4xl font-bold mb-4">Animation</h1>
+          <p className="text-lg text-gray-300 mb-6">
+            My favorite artisitic medium. I grew up believing that animated movies were for kids. But as an adult, I've grown to appreciate animation for what it is: artwork in motion. If a painting is a photograph, an animation is a movie. And like paintings, the limit of an animation is the imagination. 
+          </p>
+          <p className="text-lg text-gray-300 mb-6">
+            For me, no art form can evoke more emotion than animation. Each frame is curated so carefully as to create the precise reaction desired in the viewer. In an excellent animated film, any frame chosen randomly could be a piece of art on its own. In conjunction with strong voice acting and an immersive soundtrack, what you're left with is an experience in a league of its own. 
+          </p>
+        </div>
         {posts.length === 0 ? (
           <p className="text-gray-300 text-center">Animation posts coming soon!</p>
         ) : (
@@ -70,6 +53,11 @@ const Animation = () => {
             <AnimationPost key={index} {...post} />
           ))
         )}
+        <p className="text-lg text-gray-300 mb-4">&nbsp;</p>
+        <h1 className="text-4xl font-bold mb-4">My List</h1>
+        <p className="text-lg text-gray-300 mb-6">
+          My lifelong dream is to make animation short films that immortalize my life philosophy and inspire people to live their best life. Until then, here is my personal ordered list of favorite animated films. 
+        </p>
       </div>
     </AnimatedPage>
   );

@@ -16,7 +16,7 @@ const About = () => {
   return (
     <AnimatedPage>
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4">Bio ✍️</h1>
+        <h1 className="text-4xl font-bold mb-4">My Bio ✍️</h1>
         <p className="mb-4">
           Hi there! I'm Ray Forman, a senior Computer Science student at Columbia with a passion for entrepreneurship, technology, and innovation.
         </p>

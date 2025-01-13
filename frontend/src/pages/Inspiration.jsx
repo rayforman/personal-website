@@ -62,7 +62,12 @@ const Inspiration = () => {
   return (
     <AnimatedPage>
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-8">Inspiration Corner</h1>
+        <div className="mb-12">
+          <h1 className="text-4xl font-bold mb-4">Inspiration Corner</h1>
+          <p className="text-lg text-gray-300">
+            Where I come when I need a reminder of what is possible in this world. I hope you find these videos as inspiring as I do. 
+          </p>
+        </div>
         {posts.length === 0 ? (
           <p className="text-gray-300 text-center">Inspiration posts coming soon!</p>
         ) : (
