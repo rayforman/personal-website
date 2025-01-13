@@ -114,21 +114,21 @@ const Animation = () => {
       title: "Spirited Away",
       studio: "Studio Ghibli",
       image: "/spiritedaway.png",
-      description: "Your film description here..."
+      description: "Spirited Away is fundamentally different from everything else on this list, as it's one of Hayao Miyazaki's hand drawn masterpieces that exhibits the artistic beauty of 2D animation that holds up to this day. A coming of age story full of mystic wonder and visual glory, this movie feels like pure magic. The otherworldly soundtrack transports you to another plane where things are not what they seem..."
     },
     {
       rank: 9,
       title: "Cars",
       studio: "Pixar",
       image: "/cars.png",
-      description: "Your film description here..."
+      description: "To me, this movie is a lesson to the young and ambitious to respect what came before you, both people and places. It's easy to become self-absorbed in the journey to greatness, forgetting all of those that walked so you could run. A history lesson, a humility lesson, and perhaps a commentary on what really matters in life, Cars holds a special place in my heart, right next to my love for country music."
     },
     {
       rank: 10,
       title: "The Mitchells vs. the Machines",
       studio: "Sony Pictures Animation",
       image: "/mitchells.png",
-      description: "Your film description here..."
+      description: "My latest addition to this list, the Mitchells vs. the Machines recently surprised me as a silly yet highly relatable family movie with a strong emotional core. It did a great job of humanizing both the daughter looking to become her own person and the father struggling to let go of the family unit he spent years building. It's a movie I relate deeply with and I hope it comes to get the recognition it deserves."
     },
     // Add more films here
   ];
