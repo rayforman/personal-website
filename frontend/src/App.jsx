@@ -8,6 +8,7 @@ import Work from './pages/Work';
 import Projects from './pages/Projects';
 import Bookshelf from './pages/Bookshelf';
 import Inspiration from './pages/Inspiration';
+import Animation from './pages/Animation';
 import Resume from './pages/Resume';
 import NotFound from './pages/NotFound';
 
@@ -23,6 +24,7 @@ function AnimatedRoutes() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/bookshelf" element={<Bookshelf />} />
         <Route path="/Inspiration" element={<Inspiration />} />
+        <Route path="/Animation" element={<Animation />} />
         <Route path="/Resume" element={<Resume />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
