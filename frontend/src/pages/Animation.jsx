@@ -79,7 +79,7 @@ const Animation = () => {
       title: "Kung Fu Panda",
       studio: "Dreamworks",
       image: "/kungfupanda.png",
-      description: "This movie is called Kung Fu Panda, likely the most ridiculous name on this list. Yet it manages to be an emotionally and philosophically heavy masterpiece that explores the challenges of identity, prejudice, and becoming who one's meant to be. The point? "
+      description: "This movie is called Kung Fu Panda, likely the most ridiculous name on this list. Yet it manages to be an emotionally and philosophically heavy masterpiece that explores the challenges of identity, prejudice, and becoming who one's meant to be. And that exactly is the point. The greatest warrior in China doesn't have to be an archetypal badass like Tai Lung, just like the greatest person at anything doesn't have to be some one-in-a-million prodigy. It can be you, whoever you are! Once you realize that there's no secret ingredient to greatness, you have everything you need to become the person you always wanted to be."
     },
     {
       rank: 4,
