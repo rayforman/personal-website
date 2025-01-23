@@ -26,6 +26,11 @@ const InspirationPost = ({ title, excerpt, videoId }) => (
 const Inspiration = () => {
   const posts = [
     {
+      title: "Apple: Think Different",
+      excerpt: '"The people who are crazy enough to think they can change the world are the ones who do." - Steve Jobs',
+      videoId: "5sMBhDv4sik"
+    },
+    {
       title: "Steve Jobs on the secret to changing the world",
       excerpt: '"Everything around you that you call life was made up by people that were no smarter than you." - Steve Jobs',
       videoId: "kYfNvmF0Bqw"
