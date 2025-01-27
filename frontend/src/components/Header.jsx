@@ -14,6 +14,7 @@ const Header = () => {
             <li><Link to="/bookshelf" className="text-gray-300 hover:text-white">Bookshelf</Link></li>
             <li><Link to="/Inspiration" className="text-gray-300 hover:text-white">Inspiration</Link></li>
             <li><Link to="/Animation" className="text-gray-300 hover:text-white">Animation</Link></li>
+            <li><Link to="/Map" className="text-gray-300 hover:text-white">Map</Link></li>
             <li><Link to="/Resume" className="text-gray-300 hover:text-white">Resume</Link></li>
           </ul>
         </nav>
