@@ -4,16 +4,21 @@ import AnimatedPage from '../components/AnimatedPage';
 const WorldMap = () => {
   const visitedCountries = [
     'TN', 'BE', 'FR', 'DE', 'IS', 'IT', 'MT', 'NL', 'NO', 'PT', 'ES', 'SE', 
-    'CH', 'GB', 'VA', 'AG', 'BB', 'CA', 'CR', 'DO', 'GD', 'MX', 'PA', 'LC', 
-    'US', 'AU', 'CL', 'PE', 'UK'
+    'CH', 'VA', 'AG', 'BB', 'CA', 'CR', 'DO', 'GD', 'MX', 'PA', 'LC', 'US', 
+    'AU', 'CL', 'PE', 'UK'
   ];
-  const visitedOthers = [
-    'TEN', 'PR'
+  const visitedTerritories = [
+    'TEN', 'PR', 'STH'
   ];
   
 
   const svgRef = useRef(null);
-  const [counts, setCounts] = useState({ red: 0, green: 0, gray: 0 });
+
+  const totalCountries = 197
+  const numCountriesVisited = visitedCountries.length
+  const numTerritoriesVisited = visitedCountries.length
+  const totalVisited = numCountriesVisited + numTerritoriesVisited
+  const numCountriesNotVisited = totalCountries - numCountriesVisited
 
   useEffect(() => {
     fetch('/world.svg')
@@ -22,8 +27,6 @@ const WorldMap = () => {
         const container = svgRef.current;
         container.innerHTML = svgContent;
         
-        let redCount = 0, greenCount = 0, grayCount = 0;
-        
         const allPaths = container.querySelectorAll('path');
         allPaths.forEach(path => {
           path.classList.add('fill-gray-800');
@@ -31,31 +34,30 @@ const WorldMap = () => {
           
           if (countryId) {
             path.classList.add('transition-colors', 'duration-200');
-            if (visitedCountries.includes(countryId) || visitedOthers.includes(countryId)) {
+            if (visitedCountries.includes(countryId) || visitedTerritories.includes(countryId)) {
               path.classList.add('fill-green-600');
-              greenCount++;
-            } else {
-              path.classList.add('fill-red-800');
-              redCount++;
-            }
-          } else {
-            grayCount++;
-          }
+            } 
+          } 
         });
-
-        setCounts({ red: redCount, green: greenCount, gray: grayCount });
       })
       .catch(error => console.error('Error loading SVG:', error));
   }, []);
 
   return (
     <AnimatedPage>
+      <div className="container mx-auto px-4">
+        <div className="mb-12">
+          <h1 className="text-4xl font-bold mb-4">World Map</h1>
+          <p className="text-lg text-gray-300 mb-6">
+            To me, traveling the world is a fundamental part of the human experience and my favorite way to remind myself of the tiny bubble I live in. Only by leaving your comfort zone can you begin to appreciate the limits of your daily experience and worldview. I see traveling as not a form of vacation but as a moral obligation to contextualize myself as part of an impossibly complex world. Before I die, I want to travel to at least 100 countries. Here's how I'm doing so far:
+          </p>
+        </div>
+      </div>
       <div className="space-y-4">
         <div className="w-full max-w-[2000px] mx-auto" ref={svgRef}></div>
         <div className="text-center space-x-4">
-          <span>Visited: {counts.green}</span>
-          <span>Unvisited: {counts.red}</span>
-          <span>No ID: {counts.gray}</span>
+          <span>Countries Visited: {numCountriesVisited}</span>
+          <span>Countries Not Visited: {numCountriesNotVisited}</span>
         </div>
       </div>
     </AnimatedPage>
@@ -66,7 +68,7 @@ export default WorldMap;
 
 /*   ABBREVIATION KEY
 
-    // Africa (54 countries)
+    // Africa (55 countries)
     'DZ': 'Algeria', 'AO': 'Angola', 'BJ': 'Benin', 'BW': 'Botswana', 'BF': 'Burkina Faso', 
     'BI': 'Burundi', 'CM': 'Cameroon', 'CV': 'Cape Verde', 'CF': 'Central African Republic', 
     'TD': 'Chad', 'KM': 'Comoros', 'CG': 'Congo', 'CD': 'Democratic Republic of the Congo', 
@@ -122,9 +124,9 @@ export default WorldMap;
     'PG': 'Papua New Guinea', 'WS': 'Samoa', 'SB': 'Solomon Islands', 'TO': 'Tonga', 
     'TV': 'Tuvalu', 'VU': 'Vanuatu'
 
-    // Territories
+    // Territories (11 territories)
     'TEN': Tenerife
-    '': Gran Canaria
+    'GRC': Gran Canaria
     'FUE': Fuerteventura
     'NMI': Northern Mariana Islands
     'CAY': Cayman Islands
