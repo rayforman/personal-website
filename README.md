@@ -26,3 +26,7 @@
 - Animated page transitions
 - Dynamic project showcase
 - Interactive bookshelf
+
+## Credits
+
+- SVG World Map: https://simplemaps.com/resources/svg-world
