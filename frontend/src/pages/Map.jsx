@@ -33,10 +33,11 @@ const WorldMap = () => {
           const countryId = path.getAttribute('id');
           
           if (countryId) {
-            path.classList.add('transition-colors', 'duration-200');
             if (visitedCountries.includes(countryId) || visitedTerritories.includes(countryId)) {
-              path.classList.add('fill-green-600');
-            } 
+              path.classList.add('fill-green-600', 'hover:fill-green-500');
+            } else {
+              path.classList.add('hover:fill-gray-700');
+            }
           } 
         });
       })
@@ -49,7 +50,7 @@ const WorldMap = () => {
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-4">World Map</h1>
           <p className="text-lg text-gray-300 mb-6">
-            To me, traveling the world is a fundamental part of the human experience and my favorite way to remind myself of the tiny bubble I live in. Only by leaving your comfort zone can you begin to appreciate the limits of your daily experience and worldview. I see traveling as not a form of vacation but as a moral obligation to contextualize myself as part of an impossibly complex world. Before I die, I want to travel to at least 100 countries. Here's how I'm doing so far:
+            For me, traveling the world is a fundamental part of the human experience and is my favorite way to remind myself of the tiny bubble I live in. Only by leaving your comfort zone can you begin to appreciate the limits of your daily experience and worldview. I see traveling as not a form of vacation but as a moral obligation to contextualize myself as part of an impossibly complex world. Before I die, I want to travel to at least 100 countries. Here's how I'm doing so far:
           </p>
         </div>
       </div>
