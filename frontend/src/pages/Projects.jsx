@@ -82,7 +82,7 @@ const Projects = () => {
     },
     {
       title: "AdGenture: A Generative Adventure Game",
-      description: "Crafting an interactive storytelling platform that combines OpenAI's GPT API for narrative generation with DALL-E image synthesis, creating a cohesive adventure experience where NLP-generated story segments automatically trigger matching visual scene generation. Developed a seamless integration system that pipes narrative outputs into visual prompts, merging modified Wuerstchen architecture with sprite generation techniques, while using a custom-trained model to transform DALL-E outputs into consistent pixel art visuals. The entire pipeline operates through a user-friendly tkinter interface, allowing players to shape their adventure through choices that trigger new story branches and matching artwork in real-time.",
+      description: "Crafting an interactive storytelling platform that combines OpenAI's GPT API for narrative generation with DALL-E image synthesis, creating a seamless adventure experience where story segments trigger matching visual scenes. Built an integrated pipeline that transforms narrative outputs into visual prompts using modified Wuerstchen architecture and sprite generation, converting DALL-E outputs into consistent pixel art. The system operates through an intuitive tkinter interface, enabling players to shape their story through choices that generate matching narrative and artwork in real-time.",
       technologies: [
         "OpenAI GPT API",
         "DALL-E API",
@@ -97,6 +97,25 @@ const Projects = () => {
         ],
       image: "/adgenture.png",
       link: 'https://github.com/rayforman/AdGenture'
+    },
+    {
+      title: "V-CAST: A Video Style Transfer Model",
+      description: "Developing a video style transfer application that extends the CAST framework, combining neural network-based artistic transformation with optical flow algorithms for consistent frame styling. Built a streamlined pipeline that processes videos through a modified CAST architecture while preserving temporal coherence, enabling users to transform their videos with artistic styles from reference images. The system operates through an intuitive TKinter interface, allowing real-time video stylization inspired by modern animated films' diverse artistic approaches.",
+      technologies: [
+        "CAST Framework",
+        "Python tkinter",
+        "PyTorch",
+        "HuggingFace",
+        "AWS",
+        "CUDA",
+        "PyAV",
+        "Optical Flow Algorithm",
+        "Neural Style Transfer",
+        "Custom Loss Functions",
+        "Video Processing Libraries",
+    ],
+      image: "/vcast-image.png",
+      link: 'https://github.com/rayforman/VCAST-StyleTransfer'
     },
     {
       title: "2048 Game Solver: A Comprehensive AI Challenge",
