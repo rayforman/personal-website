@@ -81,6 +81,24 @@ const Projects = () => {
       link: 'https://github.com/rayforman/crypto-sentiments'
     },
     {
+      title: "AdGenture: A Generative Adventure Game",
+      description: "Crafting an interactive storytelling platform that combines OpenAI's GPT API for narrative generation with DALL-E image synthesis, creating a cohesive adventure experience where NLP-generated story segments automatically trigger matching visual scene generation. Developed a seamless integration system that pipes narrative outputs into visual prompts, merging modified Wuerstchen architecture with sprite generation techniques, while using a custom-trained model to transform DALL-E outputs into consistent pixel art visuals. The entire pipeline operates through a user-friendly tkinter interface, allowing players to shape their adventure through choices that trigger new story branches and matching artwork in real-time.",
+      technologies: [
+        "OpenAI GPT API",
+        "DALL-E API",
+        "Python tkinter",
+        "Wuerstchen",
+        "PyTorch",
+        "CUDA",
+        "Custom NLP Pipeline",
+        "Image Processing Libraries",
+        "Google Drive API",
+        "Aliasing-Aware Pixelization",
+        ],
+      image: "/adgenture.png",
+      link: 'https://github.com/rayforman/AdGenture'
+    },
+    {
       title: "2048 Game Solver: A Comprehensive AI Challenge",
       description: "Created an intelligent game-playing system for 2048 that combines expectiminimax search with strategic pruning techniques to make optimal decisions. The solver employs carefully crafted evaluation metrics to assess board states and anticipate random tile placements, consistently achieving high scores through strategic move planning. This project showcases the implementation of advanced game theory concepts and decision-making algorithms in an environment that balances deterministic strategy with probability management.",
       technologies: ["Python 3", "Expectiminimax Algorithm", "Alpha-beta Pruning", "Heuristic Functions", "AI Game Solving", "Modular AI Framework"],
