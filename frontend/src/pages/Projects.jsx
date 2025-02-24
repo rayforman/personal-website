@@ -113,9 +113,26 @@ const Projects = () => {
         "Neural Style Transfer",
         "Custom Loss Functions",
         "Video Processing Libraries",
-    ],
+      ],
       image: "/vcast-image.png",
       link: 'https://github.com/rayforman/VCAST-StyleTransfer'
+    },
+    {
+      title: "TableTop-AR: An Augmented Reality Tower Defense Game",
+      description: "An augmented reality tabletop gaming framework that enhances couch co-op experiences through shared spatial anchoring and mixed perspective gameplay. Built using Unity, the system enables multiple players wearing AR headsets to interact with a shared virtual gameboard that can be positioned and scaled in physical space. The game combines strategic tower defense mechanics in top-down view with immersive first-person combat, allowing players to seamlessly switch perspectives while defending against waves of enemies. Players can collaboratively place defensive structures and engage in direct melee combat using an intuitive control scheme that leverages raycast selection, grip-based manipulation, and joystick movement, all synchronized through Meta's shared spatial anchoring system to maintain consistent positioning across multiple AR devices.",
+      technologies: [
+        "Unity Game Engine",
+        "Meta Shared Spatial Anchoring",
+        "Unity XR Framework",
+        "C#",
+        "Fusion (Networking)",
+        "Unity NavMesh",
+        "Meta XR SDK",
+        "Unity Input System",
+        "Unity Particle System"
+        ],
+      image: "/ttar.png",
+      link: null
     },
     {
       title: "2048 Game Solver: A Comprehensive AI Challenge",
