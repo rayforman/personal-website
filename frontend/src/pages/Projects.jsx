@@ -118,6 +118,22 @@ const Projects = () => {
       link: 'https://github.com/rayforman/VCAST-StyleTransfer'
     },
     {
+      title: "My GPT: A Generative Pre-Trained Transformer from Scratch",
+      description: "This project is exactly what it sounds like. In an effort to better understand the revolutionary \"Transformer\" architecture, introduced by Google Brain in 2017 (Vaswani et al.), I decided to build one myself, from scratch. While nowhere near as robust and human-sounding as the enterprise LLMs of today, this project taught me that GPTs at their core are not that complicated. In fact, they're quite simple-- that's what makes them brilliant. Having a line-by-line understanding of how they're built in practice gave me a strong foundation to innovate on, fine-tune, and explore new use cases of the readily available LLMs through APIs. This project commands understanding of key transformer concepts, namely self-attention, multi-head attention, and positional encodings.",
+      technologies: [
+        "PyTorch",
+        "HuggingFace",
+        "PyTorch Lightning",
+        "Transformer",
+        "Cuda",
+        "GPTs",
+        "LLM",
+        "Machine Learning",
+        ],
+      image: "/openai.jpg",
+      link: "https://github.com/rayforman/my-gpt"
+    },
+    {
       title: "TableTop-AR: An Augmented Reality Tower Defense Game",
       description: "An augmented reality tabletop gaming framework that enhances couch co-op experiences through shared spatial anchoring and mixed perspective gameplay. Built using Unity, the system enables multiple players wearing AR headsets to interact with a shared virtual gameboard that can be positioned and scaled in physical space. The game combines strategic tower defense mechanics in top-down view with immersive first-person combat, allowing players to seamlessly switch perspectives while defending against waves of enemies. Players can collaboratively place defensive structures and engage in direct melee combat using an intuitive control scheme that leverages raycast selection, grip-based manipulation, and joystick movement, all synchronized through Meta's shared spatial anchoring system to maintain consistent positioning across multiple AR devices.",
       technologies: [
