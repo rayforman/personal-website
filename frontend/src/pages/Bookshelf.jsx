@@ -132,6 +132,14 @@ const Bookshelf = () => {
       image: "/make-your-bed.jpg",
       tags: ["Lifestyle", "Personal Development", "Daily Improvement", "Discipline"]
     },
+    {
+      title: "The Alchemist",
+      author: "Paulo Coelho",
+      description: "To realize one's destiny is a person's only obligation.",
+      link: "https://www.amazon.com/Alchemist-Paulo-Coelho/dp/0062315005/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=",
+      image: "/the-alchemist.png",
+      tags: ["Self Discovery", "Soul Searching", "Philosophy", "Spirituality"]
+    },
 
     // Add more books as needed
   ];
