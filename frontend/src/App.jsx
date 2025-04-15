@@ -18,6 +18,10 @@ function AnimatedRoutes() {
   const location = useLocation();
   const secretMapUrl = process.env.REACT_APP_SECRET_MAP_URL;
   console.log('secretMapUrl:', secretMapUrl);
+  const pw = process.env.CONNECTIONS_PASSWORD;
+  console.log('pw:', pw);
+  const connData = process.env.REACT_APP_CONNECTIONS_DATA;
+  console.log('connData:', connData);
 
   return (
     <AnimatePresence mode="wait">
