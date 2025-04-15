@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 
 const WorldMap = () => {
   const [hoveredCountry, setHoveredCountry] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const [showModal, setShowModal] = useState(false);
-  const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const navigate = useNavigate();
+  const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
   
   const visitedCountries = [
     'TN', 'BE', 'FR', 'DE', 'IS', 'IT', 'MT', 'NL', 'NO', 'PT', 'ES', 'SE', 
@@ -20,39 +16,220 @@ const WorldMap = () => {
     'TEN', 'PR', 'STH'
   ];
   
-  // Special country for connections map access
-  const accessPoint = 'FJ'; // Fiji
+  // Country name mapping
+  const countryNames = {
+    'TN': 'Tunisia',
+    'BE': 'Belgium',
+    'FR': 'France',
+    'DE': 'Germany',
+    'IS': 'Iceland',
+    'IT': 'Italy',
+    'MT': 'Malta',
+    'NL': 'Netherlands',
+    'NO': 'Norway',
+    'PT': 'Portugal',
+    'ES': 'Spain',
+    'SE': 'Sweden',
+    'CH': 'Switzerland',
+    'VA': 'Vatican City',
+    'AG': 'Antigua and Barbuda',
+    'BB': 'Barbados',
+    'CA': 'Canada',
+    'CR': 'Costa Rica',
+    'DO': 'Dominican Republic',
+    'GD': 'Grenada',
+    'MX': 'Mexico',
+    'PA': 'Panama',
+    'LC': 'Saint Lucia',
+    'US': 'United States',
+    'AU': 'Australia',
+    'CL': 'Chile',
+    'PE': 'Peru',
+    'UK': 'United Kingdom',
+    'DK': 'Denmark',
+    'IE': 'Ireland',
+    'TEN': 'Netherlands Antilles',
+    'PR': 'Puerto Rico',
+    'STH': 'Saint Helena',
+    'FJ': 'Fiji',
+    'AF': 'Afghanistan',
+    'AL': 'Albania',
+    'DZ': 'Algeria',
+    'AD': 'Andorra',
+    'AO': 'Angola',
+    'AR': 'Argentina',
+    'AM': 'Armenia',
+    'AT': 'Austria',
+    'AZ': 'Azerbaijan',
+    'BS': 'Bahamas',
+    'BH': 'Bahrain',
+    'BD': 'Bangladesh',
+    'BY': 'Belarus',
+    'BZ': 'Belize',
+    'BJ': 'Benin',
+    'BT': 'Bhutan',
+    'BO': 'Bolivia',
+    'BA': 'Bosnia and Herzegovina',
+    'BW': 'Botswana',
+    'BR': 'Brazil',
+    'BN': 'Brunei',
+    'BG': 'Bulgaria',
+    'BF': 'Burkina Faso',
+    'BI': 'Burundi',
+    'KH': 'Cambodia',
+    'CM': 'Cameroon',
+    'CV': 'Cape Verde',
+    'CF': 'Central African Republic',
+    'TD': 'Chad',
+    'CN': 'China',
+    'CO': 'Colombia',
+    'KM': 'Comoros',
+    'CG': 'Congo',
+    'CD': 'Democratic Republic of the Congo',
+    'CU': 'Cuba',
+    'CY': 'Cyprus',
+    'CZ': 'Czech Republic',
+    'DJ': 'Djibouti',
+    'DM': 'Dominica',
+    'EC': 'Ecuador',
+    'EG': 'Egypt',
+    'SV': 'El Salvador',
+    'GQ': 'Equatorial Guinea',
+    'ER': 'Eritrea',
+    'EE': 'Estonia',
+    'ET': 'Ethiopia',
+    'FI': 'Finland',
+    'GA': 'Gabon',
+    'GM': 'Gambia',
+    'GE': 'Georgia',
+    'GH': 'Ghana',
+    'GR': 'Greece',
+    'GT': 'Guatemala',
+    'GN': 'Guinea',
+    'GW': 'Guinea-Bissau',
+    'GY': 'Guyana',
+    'HT': 'Haiti',
+    'HN': 'Honduras',
+    'HU': 'Hungary',
+    'IN': 'India',
+    'ID': 'Indonesia',
+    'IR': 'Iran',
+    'IQ': 'Iraq',
+    'IL': 'Israel',
+    'JM': 'Jamaica',
+    'JP': 'Japan',
+    'JO': 'Jordan',
+    'KZ': 'Kazakhstan',
+    'KE': 'Kenya',
+    'KI': 'Kiribati',
+    'KP': 'North Korea',
+    'KR': 'South Korea',
+    'KW': 'Kuwait',
+    'KG': 'Kyrgyzstan',
+    'LA': 'Laos',
+    'LV': 'Latvia',
+    'LB': 'Lebanon',
+    'LS': 'Lesotho',
+    'LR': 'Liberia',
+    'LY': 'Libya',
+    'LI': 'Liechtenstein',
+    'LT': 'Lithuania',
+    'LU': 'Luxembourg',
+    'MG': 'Madagascar',
+    'MW': 'Malawi',
+    'MY': 'Malaysia',
+    'MV': 'Maldives',
+    'ML': 'Mali',
+    'MH': 'Marshall Islands',
+    'MR': 'Mauritania',
+    'MU': 'Mauritius',
+    'MD': 'Moldova',
+    'MC': 'Monaco',
+    'MN': 'Mongolia',
+    'ME': 'Montenegro',
+    'MA': 'Morocco',
+    'MZ': 'Mozambique',
+    'MM': 'Myanmar',
+    'NA': 'Namibia',
+    'NR': 'Nauru',
+    'NP': 'Nepal',
+    'NZ': 'New Zealand',
+    'NI': 'Nicaragua',
+    'NE': 'Niger',
+    'NG': 'Nigeria',
+    'MK': 'North Macedonia',
+    'OM': 'Oman',
+    'PK': 'Pakistan',
+    'PW': 'Palau',
+    'PS': 'Palestine',
+    'PG': 'Papua New Guinea',
+    'PY': 'Paraguay',
+    'PH': 'Philippines',
+    'PL': 'Poland',
+    'QA': 'Qatar',
+    'RO': 'Romania',
+    'RU': 'Russia',
+    'RW': 'Rwanda',
+    'KN': 'Saint Kitts and Nevis',
+    'VC': 'Saint Vincent and the Grenadines',
+    'WS': 'Samoa',
+    'SM': 'San Marino',
+    'ST': 'Sao Tome and Principe',
+    'SA': 'Saudi Arabia',
+    'SN': 'Senegal',
+    'RS': 'Serbia',
+    'SC': 'Seychelles',
+    'SL': 'Sierra Leone',
+    'SG': 'Singapore',
+    'SK': 'Slovakia',
+    'SI': 'Slovenia',
+    'SB': 'Solomon Islands',
+    'SO': 'Somalia',
+    'ZA': 'South Africa',
+    'SS': 'South Sudan',
+    'LK': 'Sri Lanka',
+    'SD': 'Sudan',
+    'SR': 'Suriname',
+    'SZ': 'Eswatini',
+    'SY': 'Syria',
+    'TW': 'Taiwan',
+    'TJ': 'Tajikistan',
+    'TZ': 'Tanzania',
+    'TH': 'Thailand',
+    'TL': 'Timor-Leste',
+    'TG': 'Togo',
+    'TO': 'Tonga',
+    'TT': 'Trinidad and Tobago',
+    'TR': 'Turkey',
+    'TM': 'Turkmenistan',
+    'TV': 'Tuvalu',
+    'UG': 'Uganda',
+    'UA': 'Ukraine',
+    'AE': 'United Arab Emirates',
+    'UY': 'Uruguay',
+    'UZ': 'Uzbekistan',
+    'VU': 'Vanuatu',
+    'VE': 'Venezuela',
+    'VN': 'Vietnam',
+    'YE': 'Yemen',
+    'ZM': 'Zambia',
+    'ZW': 'Zimbabwe',
+    'FM': 'Micronesia',
+    'GL': 'Greenland'
+  };
 
   const svgRef = useRef(null);
 
-  const totalCountries = 197;
-  const numCountriesVisited = visitedCountries.length;
-  const numTerritoriesVisited = visitedTerritories.length;
-  const totalVisited = numCountriesVisited + numTerritoriesVisited;
-  const numCountriesNotVisited = totalCountries - numCountriesVisited;
-
-  const handleCountryClick = (countryId) => {
-    if (countryId === accessPoint) {
-      setShowModal(true);
-    }
-  };
-
-  const handlePasswordSubmit = (e) => {
-    e.preventDefault();
-    // Simple password checking
-    if (password === process.env.REACT_APP_CONNECTIONS_PASSWORD) {
-      setPasswordError('');
-      setShowModal(false);
-      // Navigate to connections map with complex URL pattern for extra security
-      navigate(process.env.REACT_APP_SECRET_MAP_URL);
-    } else {
-      setPasswordError('Invalid password');
-    }
-  };
+  const totalCountries = 197
+  const numCountriesVisited = visitedCountries.length
+  const numTerritoriesVisited = visitedTerritories.length
+  const totalVisited = numCountriesVisited + numTerritoriesVisited
+  const numCountriesNotVisited = totalCountries - numCountriesVisited
 
   const handleMouseOver = (e, countryId) => {
     setHoveredCountry(countryId);
-    // Get cursor position for tooltip placement
+    
+    // Just use clientX and clientY for fixed positioning
     setTooltipPosition({ 
       x: e.clientX, 
       y: e.clientY 
@@ -61,6 +238,15 @@ const WorldMap = () => {
 
   const handleMouseOut = () => {
     setHoveredCountry(null);
+  };
+
+  const handleCountryClick = (countryId) => {
+    if (countryId === 'FJ') {
+      setShowPasswordPrompt(true);
+    } else if (countryId === 'GL') {
+      // Secret map access through Greenland
+      window.location.href = '/secret-map'; // Replace with actual path to secret map
+    }
   };
 
   useEffect(() => {
@@ -84,9 +270,6 @@ const WorldMap = () => {
             // Apply colors based on category
             if (visitedCountries.includes(countryId) || visitedTerritories.includes(countryId)) {
               path.classList.add('fill-green-600', 'hover:fill-green-500');
-            } else if (countryId === accessPoint) {
-              // Special color for the access point (slightly different blue)
-              path.classList.add('fill-blue-400', 'hover:fill-blue-300', 'cursor-pointer');
             } else {
               path.classList.add('hover:fill-gray-700');
             }
@@ -100,9 +283,10 @@ const WorldMap = () => {
       if (svgRef.current) {
         const allPaths = svgRef.current.querySelectorAll('path');
         allPaths.forEach(path => {
-          path.removeEventListener('mousemove', handleMouseOver);
+          const countryId = path.getAttribute('id');
+          path.removeEventListener('mousemove', (e) => handleMouseOver(e, countryId));
           path.removeEventListener('mouseout', handleMouseOut);
-          path.removeEventListener('click', handleCountryClick);
+          path.removeEventListener('click', () => handleCountryClick(countryId));
         });
       }
     };
@@ -121,20 +305,52 @@ const WorldMap = () => {
       <div className="space-y-4 relative">
         <div className="w-full max-w-[2000px] mx-auto" ref={svgRef}></div>
         
-        {/* Tooltip that follows cursor - adjusted to show down and to the left */}
+        {/* Tooltip that follows cursor */}
         {hoveredCountry && (
           <div 
-            className="absolute bg-black text-white px-2 py-1 rounded pointer-events-none z-10"
+            className="fixed bg-black text-white px-2 py-1 rounded pointer-events-none z-10"
             style={{ 
-              left: `${tooltipPosition.x - 200}px`, 
-              top: `${tooltipPosition.y - 80}px`
+              left: `${tooltipPosition.x + 15}px`, 
+              top: `${tooltipPosition.y - 15}px`
             }}
           >
-            {hoveredCountry === accessPoint 
-              ? "Click to view connections map" 
-              : visitedCountries.includes(hoveredCountry) 
-                ? "Visited" 
-                : hoveredCountry}
+            {countryNames[hoveredCountry] || hoveredCountry}
+          </div>
+        )}
+        
+        {/* Password prompt modal */}
+        {showPasswordPrompt && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
+            <div className="bg-gray-800 p-6 rounded-lg max-w-md w-full">
+              <h3 className="text-xl font-bold mb-4">Enter Password</h3>
+              <input 
+                type="password" 
+                id="secretPassword"
+                className="w-full p-2 mb-4 bg-gray-700 border border-gray-600 rounded text-white"
+                placeholder="Password"
+              />
+              <div className="flex justify-end space-x-2">
+                <button 
+                  className="px-4 py-2 bg-gray-600 rounded"
+                  onClick={() => setShowPasswordPrompt(false)}
+                >
+                  Cancel
+                </button>
+                <button 
+                  className="px-4 py-2 bg-blue-600 rounded"
+                  onClick={() => {
+                    const password = document.getElementById('secretPassword').value;
+                    if (password === 'atlantis') { // Replace with actual password
+                      window.location.href = '/secret-map'; // Replace with actual path to secret map
+                    } else {
+                      alert('Incorrect password');
+                    }
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
           </div>
         )}
         
@@ -150,55 +366,11 @@ const WorldMap = () => {
             <span>Visited</span>
           </div>
           <div className="flex items-center">
-            <div className="w-4 h-4 bg-blue-400 mr-2"></div>
-            <span>Connections Map Access (Click Fiji)</span>
-          </div>
-          <div className="flex items-center">
             <div className="w-4 h-4 bg-gray-800 mr-2"></div>
             <span>Not Visited</span>
           </div>
         </div>
       </div>
-
-      {/* Password Modal */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-gray-800 p-6 rounded-lg w-full max-w-md">
-            <h2 className="text-2xl font-bold mb-4">Private Connections Map</h2>
-            <p className="mb-4">Enter password to view your personal connections map:</p>
-            
-            <form onSubmit={handlePasswordSubmit}>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-2 mb-4 bg-gray-700 text-white rounded"
-                placeholder="Enter password"
-              />
-              
-              {passwordError && (
-                <p className="text-red-500 mb-4">{passwordError}</p>
-              )}
-              
-              <div className="flex justify-end gap-2">
-                <button
-                  type="button"
-                  onClick={() => setShowModal(false)}
-                  className="px-4 py-2 bg-gray-600 rounded"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-blue-500 rounded"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </AnimatedPage>
   );
 };
