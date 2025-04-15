@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound';
 function AnimatedRoutes() {
   const location = useLocation();
   const secretMapUrl = process.env.REACT_APP_SECRET_MAP_URL;
+  console.log('secretMapUrl:', secretMapUrl);
 
   return (
     <AnimatePresence mode="wait">
