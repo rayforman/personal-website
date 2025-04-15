@@ -1,45 +1,35 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
-import exampleConnections from '../data/example-connections.json';
-
-// In development, we'll use the example connections
-// In production, we'll try to load the real connections file if it exists
-const loadConnections = async () => {
-  try {
-    if (process.env.NODE_ENV === 'production') {
-      // Try to load the real connections file in production
-      const response = await fetch('/data/private-connections.json');
-      if (response.ok) {
-        return await response.json();
-      }
-    }
-    // Fall back to example connections
-    return exampleConnections;
-  } catch (error) {
-    console.error('Error loading connections:', error);
-    return exampleConnections;
-  }
-};
 
 const ConnectionsMap = () => {
   const [hoveredCountry, setHoveredCountry] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [connections, setConnections] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
   
+  const visitedCountries = [
+    'TN', 'BE', 'FR', 'DE', 'IS', 'IT', 'MT', 'NL', 'NO', 'PT', 'ES', 'SE', 
+    'CH', 'VA', 'AG', 'BB', 'CA', 'CR', 'DO', 'GD', 'MX', 'PA', 'LC', 'US', 
+    'AU', 'CL', 'PE', 'UK', 'DK', 'IE'
+  ];
+  
+  const visitedTerritories = [
+    'TEN', 'PR', 'STH'
+  ];
+
   const svgRef = useRef(null);
 
-  const handleBackClick = () => {
-    navigate('/Map');
-  };
-  
+  const totalCountries = 197;
+  const numCountriesVisited = visitedCountries.length;
+  const numTerritoriesVisited = visitedTerritories.length;
+  const totalVisited = numCountriesVisited + numTerritoriesVisited;
+  const numCountriesNotVisited = totalCountries - numCountriesVisited;
+
   const handleMouseOver = (e, countryId) => {
-    // Only show tooltip for connection countries
+    // Only set hoveredCountry if it's a connection country
     if (connections[countryId]) {
       setHoveredCountry(countryId);
-      // Get cursor position for tooltip placement
+      
+      // Just use clientX and clientY for fixed positioning
       setTooltipPosition({ 
         x: e.clientX, 
         y: e.clientY 
@@ -51,42 +41,46 @@ const ConnectionsMap = () => {
     setHoveredCountry(null);
   };
 
+  // Load connections from environment variable
   useEffect(() => {
-    // Load connections data
-    loadConnections().then(data => {
-      setConnections(data);
-      setIsLoading(false);
-    });
+    try {
+      // Use the environment variable for connections
+      const connectionsJson = process.env.REACT_APP_CONNECTIONS_DATA;
+      if (connectionsJson) {
+        setConnections(JSON.parse(connectionsJson));
+      }
+    } catch (error) {
+      console.error("Error loading connections data:", error);
+    }
+  }, []);
 
-    // Load SVG map
+  useEffect(() => {
     fetch('/world.svg')
       .then(response => response.text())
       .then(svgContent => {
         const container = svgRef.current;
-        if (!container) return;
-        
         container.innerHTML = svgContent;
         
-        // We need to wait for connections to be loaded before coloring the map
-        loadConnections().then(connectionData => {
-          const allPaths = container.querySelectorAll('path');
-          allPaths.forEach(path => {
-            path.classList.add('fill-gray-800');
-            const countryId = path.getAttribute('id');
+        const allPaths = container.querySelectorAll('path');
+        allPaths.forEach(path => {
+          // path.classList.add('fill-gray-800');
+          const countryId = path.getAttribute('id');
+          
+          if (countryId) {
+            // Add event listeners for tooltips
+            path.addEventListener('mousemove', (e) => handleMouseOver(e, countryId));
+            path.addEventListener('mouseout', handleMouseOut);
             
-            if (countryId) {
-              // Add event listeners for tooltips
-              path.addEventListener('mousemove', (e) => handleMouseOver(e, countryId));
-              path.addEventListener('mouseout', handleMouseOut);
-              
-              // Apply colors based on whether there's a connection
-              if (connectionData[countryId]) {
-                path.classList.add('fill-blue-600', 'hover:fill-blue-500');
-              } else {
-                path.classList.add('hover:fill-gray-700');
-              }
-            } 
-          });
+            // Apply colors based on category
+            if (visitedCountries.includes(countryId) || visitedTerritories.includes(countryId)) {
+              path.classList.add('fill-green-600', 'hover:fill-green-500');
+            } else if (connections[countryId]) {
+              // Connection countries get a different color (blue)
+              path.classList.add('fill-blue-600', 'hover:fill-blue-500');
+            } else {
+              path.classList.add('fill-gray-800', 'hover:fill-gray-700');
+            }
+          } 
         });
       })
       .catch(error => console.error('Error loading SVG:', error));
@@ -96,68 +90,59 @@ const ConnectionsMap = () => {
       if (svgRef.current) {
         const allPaths = svgRef.current.querySelectorAll('path');
         allPaths.forEach(path => {
-          path.removeEventListener('mousemove', handleMouseOver);
+          const countryId = path.getAttribute('id');
+          path.removeEventListener('mousemove', (e) => handleMouseOver(e, countryId));
           path.removeEventListener('mouseout', handleMouseOut);
         });
       }
     };
-  }, []);
-
-  if (isLoading) {
-    return (
-      <AnimatedPage>
-        <div className="container mx-auto px-4 text-center">
-          <div className="my-20">
-            <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p>Loading connections map...</p>
-          </div>
-        </div>
-      </AnimatedPage>
-    );
-  }
+  }, [connections]);
 
   return (
     <AnimatedPage>
       <div className="container mx-auto px-4">
-        <div className="mb-8 flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Personal Connections Map</h1>
-          <button 
-            onClick={handleBackClick}
-            className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition-colors"
-          >
-            Back to World Map
-          </button>
+        <div className="mb-12">
+          <h1 className="text-4xl font-bold mb-4">World Map ⭐</h1>
+          <p className="text-lg text-gray-300 mb-6">
+            This special map shows both countries I've visited and countries where I have personal connections. By pure chance I've been blessed to make a network of friends from around the world. Here's who I plan to visit as I travel the world. 
+          </p>
         </div>
-        <p className="text-lg text-gray-300 mb-6">
-          This map shows my personal connections around the world. Hover over the blue countries to see who I know there.
-        </p>
       </div>
-      
       <div className="space-y-4 relative">
         <div className="w-full max-w-[2000px] mx-auto" ref={svgRef}></div>
         
-        {/* Tooltip that follows cursor */}
+        {/* Tooltip that follows cursor - only for connection countries */}
         {hoveredCountry && connections[hoveredCountry] && (
           <div 
-            className="absolute bg-black text-white px-3 py-2 rounded pointer-events-none z-10"
+            className="fixed bg-black text-white px-2 py-1 rounded pointer-events-none z-10"
             style={{ 
-              left: `${tooltipPosition.x - 200}px`, 
-              top: `${tooltipPosition.y - 80}px` 
+              left: `${tooltipPosition.x + 15}px`, 
+              top: `${tooltipPosition.y - 15}px`
             }}
           >
-            <strong>{hoveredCountry}:</strong> {connections[hoveredCountry]}
+            {connections[hoveredCountry]}
           </div>
         )}
+        
+        <div className="text-center space-x-4">
+          <span>Countries Visited: {numCountriesVisited}</span>
+          <span>Personal Connections: {Object.keys(connections).length}</span>
+          <span>Countries Not Visited: {numCountriesNotVisited}</span>
+        </div>
         
         {/* Legend */}
         <div className="flex flex-wrap justify-center gap-4 mt-4 px-4">
           <div className="flex items-center">
+            <div className="w-4 h-4 bg-green-600 mr-2"></div>
+            <span>Visited</span>
+          </div>
+          <div className="flex items-center">
             <div className="w-4 h-4 bg-blue-600 mr-2"></div>
-            <span>Personal Connection</span>
+            <span>Connection</span>
           </div>
           <div className="flex items-center">
             <div className="w-4 h-4 bg-gray-800 mr-2"></div>
-            <span>No Connection</span>
+            <span>Not Visited</span>
           </div>
         </div>
       </div>

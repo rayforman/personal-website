@@ -16,6 +16,7 @@ import NotFound from './pages/NotFound';
 
 function AnimatedRoutes() {
   const location = useLocation();
+  const secretMapUrl = process.env.REACT_APP_SECRET_MAP_URL;
 
   return (
     <AnimatePresence mode="wait">
@@ -28,8 +29,7 @@ function AnimatedRoutes() {
         <Route path="/Inspiration" element={<Inspiration />} />
         <Route path="/Animation" element={<Animation />} />
         <Route path="/Map" element={<Map />} />
-        {/* Complex URL pattern for connections map for security */}
-        <Route path="/travel-insights/personal-global-network/connections-map-private-a7f9d3b2e1c8" element={<ConnectionsMap />} />
+        {secretMapUrl && <Route path={secretMapUrl} element={<ConnectionsMap />} />}
         <Route path="/Resume" element={<Resume />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

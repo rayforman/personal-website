@@ -243,9 +243,6 @@ const WorldMap = () => {
   const handleCountryClick = (countryId) => {
     if (countryId === 'FJ') {
       setShowPasswordPrompt(true);
-    } else if (countryId === 'GL') {
-      // Secret map access through Greenland
-      window.location.href = '/secret-map'; // Replace with actual path to secret map
     }
   };
 
@@ -340,8 +337,11 @@ const WorldMap = () => {
                   className="px-4 py-2 bg-blue-600 rounded"
                   onClick={() => {
                     const password = document.getElementById('secretPassword').value;
-                    if (password === 'atlantis') { // Replace with actual password
-                      window.location.href = '/secret-map'; // Replace with actual path to secret map
+                    const correctPassword = process.env.REACT_APP_CONNECTIONS_PASSWORD;
+                    const secretMapUrl = process.env.REACT_APP_SECRET_MAP_URL;
+                    
+                    if (password === correctPassword) {
+                      window.location.href = secretMapUrl;
                     } else {
                       alert('Incorrect password');
                     }
