@@ -10,6 +10,7 @@ import Bookshelf from './pages/Bookshelf';
 import Inspiration from './pages/Inspiration';
 import Animation from './pages/Animation';
 import Map from './pages/Map';
+import ConnectionsMap from './pages/ConnectionsMap';
 import Resume from './pages/Resume';
 import NotFound from './pages/NotFound';
 
@@ -27,6 +28,8 @@ function AnimatedRoutes() {
         <Route path="/Inspiration" element={<Inspiration />} />
         <Route path="/Animation" element={<Animation />} />
         <Route path="/Map" element={<Map />} />
+        {/* Complex URL pattern for connections map for security */}
+        <Route path="/travel-insights/personal-global-network/connections-map-private-a7f9d3b2e1c8" element={<ConnectionsMap />} />
         <Route path="/Resume" element={<Resume />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

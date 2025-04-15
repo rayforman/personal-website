@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 
 const WorldMap = () => {
   const [hoveredCountry, setHoveredCountry] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [showModal, setShowModal] = useState(false);
+  const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const navigate = useNavigate();
   
   const visitedCountries = [
     'TN', 'BE', 'FR', 'DE', 'IS', 'IT', 'MT', 'NL', 'NO', 'PT', 'ES', 'SE', 
@@ -15,49 +20,43 @@ const WorldMap = () => {
     'TEN', 'PR', 'STH'
   ];
   
-  // New array for connection countries with their associated contacts
-  const connectionCountries = {
-    'LK': 'Sid Jha',
-    'IN': 'Suki Gupta',
-    'RS': 'Nikola Desnica, Leo Jergovic',
-    'PL': 'Aleksy Chvedzuk',
-    'TZ': 'Collin Emmanuel',
-    'MY': 'Joey Tristan',
-    'NP': 'Joey Tristan\'s Friend (EBC Guide)',
-    'CN': 'Jin Ma',
-    'OM': 'Geethan Ramesh',
-    'AE': 'Geethan Ramesh',
-    'MA': 'Ismail Ennibi',
-    'GY': 'Darran Shivdat',
-    'EC': 'Anthony Ayala',
-    'IT': 'Federico Stanzani',
-    'ES': 'Armando Martinez de la Villa',
-    'PA': 'José Isaac Tejedor',
-    'IL': 'Sahar Paz, David Ioinovich',
-    'UK': 'Ben Harrison',
-    'BR': 'Lorenzo Bogaert',
-    'SG': 'Sajush Arora, Rohan Sureash',
-    'CO': 'Felipe Rachid'
-  };
+  // Special country for connections map access
+  const accessPoint = 'FJ'; // Fiji
 
   const svgRef = useRef(null);
 
-  const totalCountries = 197
-  const numCountriesVisited = visitedCountries.length
-  const numTerritoriesVisited = visitedTerritories.length
-  const totalVisited = numCountriesVisited + numTerritoriesVisited
-  const numCountriesNotVisited = totalCountries - numCountriesVisited
+  const totalCountries = 197;
+  const numCountriesVisited = visitedCountries.length;
+  const numTerritoriesVisited = visitedTerritories.length;
+  const totalVisited = numCountriesVisited + numTerritoriesVisited;
+  const numCountriesNotVisited = totalCountries - numCountriesVisited;
+
+  const handleCountryClick = (countryId) => {
+    if (countryId === accessPoint) {
+      setShowModal(true);
+    }
+  };
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    // Simple password checking
+    if (password === process.env.REACT_APP_CONNECTIONS_PASSWORD) {
+      setPasswordError('');
+      setShowModal(false);
+      // Navigate to connections map with complex URL pattern for extra security
+      navigate(process.env.REACT_APP_SECRET_MAP_URL);
+    } else {
+      setPasswordError('Invalid password');
+    }
+  };
 
   const handleMouseOver = (e, countryId) => {
-    // Only show tooltip for connection countries
-    if (connectionCountries[countryId]) {
-      setHoveredCountry(countryId);
-      // Get cursor position for tooltip placement
-      setTooltipPosition({ 
-        x: e.clientX, 
-        y: e.clientY 
-      });
-    }
+    setHoveredCountry(countryId);
+    // Get cursor position for tooltip placement
+    setTooltipPosition({ 
+      x: e.clientX, 
+      y: e.clientY 
+    });
   };
 
   const handleMouseOut = () => {
@@ -77,16 +76,17 @@ const WorldMap = () => {
           const countryId = path.getAttribute('id');
           
           if (countryId) {
-            // Add event listeners for tooltips
+            // Add event listeners for tooltips and clicks
             path.addEventListener('mousemove', (e) => handleMouseOver(e, countryId));
             path.addEventListener('mouseout', handleMouseOut);
+            path.addEventListener('click', () => handleCountryClick(countryId));
             
             // Apply colors based on category
             if (visitedCountries.includes(countryId) || visitedTerritories.includes(countryId)) {
               path.classList.add('fill-green-600', 'hover:fill-green-500');
-            } else if (connectionCountries[countryId]) {
-              // Connection countries get a different color (blue)
-              path.classList.add('fill-blue-600', 'hover:fill-blue-500');
+            } else if (countryId === accessPoint) {
+              // Special color for the access point (slightly different blue)
+              path.classList.add('fill-blue-400', 'hover:fill-blue-300', 'cursor-pointer');
             } else {
               path.classList.add('hover:fill-gray-700');
             }
@@ -102,6 +102,7 @@ const WorldMap = () => {
         allPaths.forEach(path => {
           path.removeEventListener('mousemove', handleMouseOver);
           path.removeEventListener('mouseout', handleMouseOut);
+          path.removeEventListener('click', handleCountryClick);
         });
       }
     };
@@ -121,7 +122,7 @@ const WorldMap = () => {
         <div className="w-full max-w-[2000px] mx-auto" ref={svgRef}></div>
         
         {/* Tooltip that follows cursor - adjusted to show down and to the left */}
-        {hoveredCountry && connectionCountries[hoveredCountry] && (
+        {hoveredCountry && (
           <div 
             className="absolute bg-black text-white px-2 py-1 rounded pointer-events-none z-10"
             style={{ 
@@ -129,7 +130,11 @@ const WorldMap = () => {
               top: `${tooltipPosition.y - 80}px`
             }}
           >
-            {connectionCountries[hoveredCountry]}
+            {hoveredCountry === accessPoint 
+              ? "Click to view connections map" 
+              : visitedCountries.includes(hoveredCountry) 
+                ? "Visited" 
+                : hoveredCountry}
           </div>
         )}
         
@@ -145,8 +150,8 @@ const WorldMap = () => {
             <span>Visited</span>
           </div>
           <div className="flex items-center">
-            <div className="w-4 h-4 bg-blue-600 mr-2"></div>
-            <span>Personal Connection</span>
+            <div className="w-4 h-4 bg-blue-400 mr-2"></div>
+            <span>Connections Map Access (Click Fiji)</span>
           </div>
           <div className="flex items-center">
             <div className="w-4 h-4 bg-gray-800 mr-2"></div>
@@ -154,6 +159,46 @@ const WorldMap = () => {
           </div>
         </div>
       </div>
+
+      {/* Password Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-gray-800 p-6 rounded-lg w-full max-w-md">
+            <h2 className="text-2xl font-bold mb-4">Private Connections Map</h2>
+            <p className="mb-4">Enter password to view your personal connections map:</p>
+            
+            <form onSubmit={handlePasswordSubmit}>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full p-2 mb-4 bg-gray-700 text-white rounded"
+                placeholder="Enter password"
+              />
+              
+              {passwordError && (
+                <p className="text-red-500 mb-4">{passwordError}</p>
+              )}
+              
+              <div className="flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  className="px-4 py-2 bg-gray-600 rounded"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-500 rounded"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </AnimatedPage>
   );
 };

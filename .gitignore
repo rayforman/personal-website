@@ -80,5 +80,12 @@ dist
 .dynamodb/
 
 # TernJS port file
-.tern-portbackend-heroku/
+.tern-port
+
+# Backend Heroku files
 backend-heroku/
+
+# Private data
+/frontend/src/data/private-connections.json
+/frontend/public/data/private-connections.json
+/private-connections.json
