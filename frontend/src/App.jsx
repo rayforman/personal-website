@@ -18,7 +18,7 @@ function AnimatedRoutes() {
   const location = useLocation();
   const secretMapUrl = process.env.REACT_APP_MAP_PATH;
   console.log('secretMapUrl:', secretMapUrl);
-  const pw = process.env.CONNECTIONS_PASSWORD;
+  const pw = process.env.REACT_APP_CONNECTIONS_PW;
   console.log('pw:', pw);
   const connData = process.env.REACT_APP_CONNECTIONS_DT;
   console.log('connData:', connData);
