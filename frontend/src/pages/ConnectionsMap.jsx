@@ -45,7 +45,7 @@ const ConnectionsMap = () => {
   useEffect(() => {
     try {
       // Use the environment variable for connections
-      const connectionsJson = process.env.REACT_APP_CONNECTIONS_DATA;
+      const connectionsJson = process.env.REACT_APP_CONNECTIONS_DT;
       if (connectionsJson) {
         setConnections(JSON.parse(connectionsJson));
       }

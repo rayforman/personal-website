@@ -337,8 +337,8 @@ const WorldMap = () => {
                   className="px-4 py-2 bg-blue-600 rounded"
                   onClick={() => {
                     const password = document.getElementById('secretPassword').value;
-                    const correctPassword = process.env.REACT_APP_CONNECTIONS_PASSWORD;
-                    const secretMapUrl = process.env.REACT_APP_SECRET_MAP_URL;
+                    const correctPassword = process.env.REACT_APP_CONNECTIONS_PW;
+                    const secretMapUrl = process.env.REACT_APP_MAP_PATH;
                     
                     if (password === correctPassword) {
                       window.location.href = secretMapUrl;
