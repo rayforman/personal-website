@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 
 const WorldMap = () => {
+  const navigate = useNavigate();
   const [hoveredCountry, setHoveredCountry] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
@@ -341,7 +343,8 @@ const WorldMap = () => {
                     const secretMapUrl = process.env.REACT_APP_MAP_PATH;
                     
                     if (password === correctPassword) {
-                      window.location.href = secretMapUrl;
+                      // Changed from window.location.href to navigate
+                      navigate(secretMapUrl);
                     } else {
                       alert('Incorrect password');
                     }
