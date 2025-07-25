@@ -5,7 +5,7 @@ const Introduction = () => {
     <div className="text-center">
       <h1 className="text-4xl font-bold mb-2">I'm Ray! Nice to meet you 👋</h1>
       <p className="text-xl text-gray-300 mb-1">
-        Senior Computer Science Student at Columbia University
+        Computer Science Graduate from Columbia University
       </p>
       <p className="text-xl text-gray-300">
         Full Stack & AI Software Developer

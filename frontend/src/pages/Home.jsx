@@ -51,7 +51,7 @@ const Home = () => {
             <div>
               <h2 className="text-2xl font-semibold mb-4">🧑‍💻 About Me</h2>
               <p className="text-gray-300">
-                I am currently a Senior Computer Science Student at Columbia with a focus on Machine Learning and a minor in Business Management. I also work part time as a Software Engineer with a passion for building innovative and user-focused software solutions. A graduating senior, I am now actively seeking NYC-based full-time opportunities to work on impactful projects that leverage my skills in software engineering, business, and artificial intelligence to solve challenging problems. I am specifically interested in growing startups and collaborating with like-minded individuals to build innovative solutions that push the boundaries of what is possible with technology. Feel free to reach out to me if you have any interesting projects or opportunities you would like to discuss!
+                I recently graduated with a bachelors degree in Computer Science from Columbia with a focus on Machine Learning and a minor in Business Management. I also work part time as a Software Engineer with a passion for building innovative and user-focused software solutions. I am now actively seeking NYC-based full-time opportunities to work on impactful projects that leverage my skills in software engineering, business, and artificial intelligence to solve challenging problems. I am specifically interested in high potential startups and collaborating with like-minded individuals to build innovative solutions that push the boundaries of what is possible with technology. Feel free to reach out to me if you have any interesting projects or opportunities you would like to discuss!
               </p>
             </div>
 
@@ -74,7 +74,7 @@ const Home = () => {
                 1) I built a Spotify AI Playlist Generator that uses a GPT-3 language model to generate playlists based on user input. Currently expanding to detect specific artists and songs. <br />
                 2) I am working on an Cryptocurrency Algorithmic Trader for highly volatile cryptos using a combination of technical analysis and online sentiment analysis to predict price movements and execute trades.
                 <br /><br />
-                <i>Additionally, I've been recruiting for NYC full-time opportunities to begin my career in building technology solutions.</i>
+                <i>Update: I am now exploring NYC-based full-time opportunities in full-stack and AI development.</i>
               </p>
             </div>
             
