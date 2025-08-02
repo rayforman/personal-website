@@ -81,6 +81,26 @@ const Projects = () => {
       link: 'https://github.com/rayforman/crypto-sentiments'
     },
     {
+      title: "Columbia Climate School Event Management Database",
+      description: "Designed a comprehensive event management database system for the Columbia Climate School's development team, enabling efficient tracking of contacts, donors, events, and RSVPs. Developed a robust backend using PostgreSQL to handle complex queries and data relationships, ensuring reliable data integrity and retrieval. The system supports dynamic event creation, participant management, and real-time updates through a user-friendly interface, streamlining the school's event organization processes.",
+      technologies: [
+        "PostgreSQL",
+        "React",
+        "Node.js",
+        "Express.js",
+        "SQL",
+        "Database Design",
+        "YAML",
+        "Data Retrieval",
+        "Authentication",
+        "File Uploads",
+        "Mass Uploads",
+        "CSV Import",
+        ],
+      image: "/ccs-databse.png",
+      link: 'https://github.com/rayforman/climate-school-contacts'
+    },
+    {
       title: "AdGenture: A Generative Adventure Game",
       description: "Crafting an interactive storytelling platform that combines OpenAI's GPT API for narrative generation with DALL-E image synthesis, creating a seamless adventure experience where story segments trigger matching visual scenes. Built an integrated pipeline that transforms narrative outputs into visual prompts using modified Wuerstchen architecture and sprite generation, converting DALL-E outputs into consistent pixel art. The system operates through an intuitive tkinter interface, enabling players to shape their story through choices that generate matching narrative and artwork in real-time.",
       technologies: [
