@@ -12,7 +12,7 @@ const WorldMap = () => {
     'TN', 'BE', 'FR', 'DE', 'IS', 'IT', 'MT', 'NL', 'NO', 'PT', 'ES', 'SE', 
     'CH', 'VA', 'AG', 'BB', 'CA', 'CR', 'DO', 'GD', 'MX', 'PA', 'LC', 'US', 
     'AU', 'CL', 'PE', 'UK', 'DK', 'IE', 'TW', 'CN', 'SG', 'TH', 'KR', 'MY',
-    'PH', 'ID', 'LK'
+    'PH', 'ID', 'LK', 'IN'
   ];
   
   const visitedTerritories = [
