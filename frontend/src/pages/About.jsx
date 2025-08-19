@@ -18,7 +18,7 @@ const About = () => {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">My Bio ✍️</h1>
         <p className="mb-4">
-          Hi there! I'm Ray Forman, a senior Computer Science student at Columbia with a passion for entrepreneurship, technology, and innovation.
+          Hi there! I'm Ray Forman, a recent graduate from Columbia with a Bachelors in Computer Science and a passion for entrepreneurship, technology, and innovation.
         </p>
         <p className="mb-4">
           I'm originally from Northern Virginia but New York is my family home. When I'm not coding, you can find me learning new languages, practicing the guitar, or watching my New York Sports teams (Knicks, Mets, and Jets). I also have a creative passion for animation as an artistic medium and am working on a series of short films. I hope to tell my stories through the lens of technology and art. 

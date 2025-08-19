@@ -71,8 +71,9 @@ const Home = () => {
               <h2 className="text-2xl font-semibold mb-4">🚀 What I'm Up To</h2>
               <p className="text-gray-300 mb-4">
                 Lately, I have been excited by the possibilities of pairing popular software APIs with LLMs to create innovative features. Here are a few: <br />
-                1) I built a Spotify AI Playlist Generator that uses a GPT-3 language model to generate playlists based on user input. Currently expanding to detect specific artists and songs. <br />
+                1) I built a Spotify AI Playlist Generator that uses a GPT-5 language model to generate playlists based on user input. Currently expanding to detect specific artists and songs. <br />
                 2) I am working on an Cryptocurrency Algorithmic Trader for highly volatile cryptos using a combination of technical analysis and online sentiment analysis to predict price movements and execute trades.
+                3) I am building a mobile-deployed travel planner that uses LLMs to generate personalized travel itineraries based on user preferences and budget constraints. <br />
                 <br /><br />
                 <i>Update: I am now exploring NYC-based full-time opportunities in full-stack and AI development.</i>
               </p>
