@@ -56,11 +56,11 @@ const WorkCard = ({ title, company, description, technologies, image, link, star
 const Work = () => {
   const workExperiences = [
   {
-      title: "Junior Software Engineer",
+      title: "Software Engineer",
       company: "LEAP NSF - Pierre Gentine Lab",
       startDate: "August 2024",
       endDate: "Present",
-      description: "My latest and most impactful work to date. Built a real-time coastal monitoring system with sub-second data pipelines, WebSocket streaming, and predictive analytics using FastAPI, Airflow, and React - demonstrating enterprise-grade data infrastructure skills. Additionally, built an automated LLM code translation pipeline to build the world’s first Python-based climate model. Implemented a Retrieval Augmented Generation (RAG) module using Abstract Syntax Trees and example translations that improved Claude Sonnet 3.5 Fortran-to-Python translation times by 60% and reduced manual coding errors by 30%.",
+      description: "My latest and most impactful work. Built a real-time coastal monitoring system with sub-second data pipelines, WebSocket streaming, and predictive analytics using FastAPI, Airflow, and React - demonstrating enterprise-grade data infrastructure skills. Additionally, built an automated LLM code translation pipeline to build the world’s first Python-based climate model. Implemented a Retrieval Augmented Generation (RAG) module using Abstract Syntax Trees and example translations that improved Claude Sonnet 3.5 Fortran-to-Python translation times by 60% and reduced manual coding errors by 30%.",
       technologies: ["Data Engineering",  "Data Pipeline Architecture", "Apache Airflow", "Pandas", "Real-Time Streaming", "Data Ingestion", "Full Stack Development", "LLMs", "Retrieval Augmented Generation", "Prompt Engineering", "Fine-tuning", "GPT Models", "Python", "PyTorch"],
       image: "/leapnsf_full.png",
       link: 'https://leap.columbia.edu/',
