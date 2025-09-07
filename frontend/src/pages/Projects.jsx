@@ -38,6 +38,34 @@ const ProjectCard = ({ title, description, technologies, image, link }) => (
 const Projects = () => {
   const projects = [
     {
+      title: "Real-Time Coastal Data Pipeline",
+      description: "Built a production-grade streaming data infrastructure that ingests NOAA buoy data every 6 minutes, processes it through Apache Airflow orchestration, and delivers real-time insights via WebSocket connections to a React dashboard. The system features sub-second API response times, Redis caching for high-frequency queries, and predictive alerting for dangerous coastal conditions. Architected with a modern tech stack featuring FastAPI, PostgreSQL, and containerized deployment.",
+      technologies: [
+        "FastAPI",
+        "Apache Airflow",
+        "PostgreSQL", 
+        "Redis",
+        "React",
+        "TypeScript",
+        "WebSocket",
+        "Pandas",
+        "Docker",
+        "Python",
+        "SQL",
+        "Database Design",
+        "Real-Time Streaming",
+        "Data Pipeline Architecture",
+        "RESTful APIs",
+        "Async Programming",
+        "Time-Series Analysis",
+        "Data Ingestion",
+        "Caching Strategies",
+        "Production Deployment"
+      ],
+      image: "/hurricane.jpeg",
+      link: null
+    },
+    {
       title: "Spotify AI Playlist Generator",
       description: "Built a web app using React/Node.js and the OpenAI API to generate Spotify playlists from natural language using GPT-3.5. Designed a Python microservice mapping text to Spotify's 11 audio features, integrating OAuth, REST APIs, and database functionality across three services. Now allows users to intelligently generate playlists for any mood, activity, or genre, leveraging the power of AI to enhance music discovery and curation. My go-to party trick for on-the-spot playlist generation!",
       technologies: [
@@ -197,7 +225,7 @@ const Projects = () => {
   return (
     <AnimatedPage>
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-4">Personal Projects</h1>
+        <h1 className="text-4xl font-bold mb-4">Notable Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
